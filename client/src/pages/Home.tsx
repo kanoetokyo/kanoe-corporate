@@ -602,6 +602,43 @@ export default function Home() {
         </section>
       </Reveal>
 
+      {/* ===== 採用情報セクション ===== */}
+      <Reveal>
+        <section style={{ backgroundColor: C.bg, borderTop: `1px solid ${C.border}` }} className="py-14 md:py-20">
+          <div className="container">
+            <div className="mb-8">
+              <p className="text-xs tracking-[0.15em] uppercase mb-2" style={{ color: C.textLight }}>Recruit</p>
+              <h2 className="text-xl font-bold" style={{ color: C.text }}>採用情報</h2>
+            </div>
+
+            <div
+              style={{ border: `1px solid ${C.border}`, backgroundColor: C.bgWhite }}
+              className="max-w-2xl"
+            >
+              <div className="p-6 md:p-8">
+                <p className="text-sm leading-relaxed mb-6" style={{ color: C.textMuted }}>
+                  株式会社カノエでは、一緒に働く仲間を募集しています。<br />
+                  「おそうじでキレイで豊かなくらしを」という理念のもと、<br />
+                  明るく元気なスタッフが活躍しています。
+                </p>
+                <a
+                  href="https://en-gage.net/oimachi-osouji/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 transition-all duration-200"
+                  style={{ backgroundColor: C.navy, color: "#ffffff" }}
+                  onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.85"}
+                  onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
+                >
+                  採用情報を見る
+                  <ExternalIcon />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Reveal>
+
       {/* ===== フッター ===== */}
       <footer style={{ backgroundColor: C.bg, borderTop: `1px solid ${C.border}` }} className="py-8">
         <div className="container">
