@@ -333,7 +333,7 @@ export default function Home() {
               paddingTop: "2rem",
             }}
           >
-            <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
+            <div className="flex flex-row gap-6 md:gap-12 items-start">
               <div className="flex-1">
                 <p className="text-xs tracking-[0.15em] uppercase mb-2 font-medium" style={{ color: C.navyLight }}>Slogan</p>
                 <p
