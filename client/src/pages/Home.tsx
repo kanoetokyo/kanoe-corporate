@@ -375,36 +375,27 @@ export default function Home() {
           backgroundColor: "rgba(255,255,255,0.04)", pointerEvents: "none",
         }} />
 
-        <div className="container py-8 md:py-10" style={{ position: "relative" }}>
-          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+        <div className="container py-7 md:py-8" style={{ position: "relative" }}>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
 
             {/* 左：メッセージ */}
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-3">
-                {/* LINEアイコン */}
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="24" height="24" rx="6" fill="white" fillOpacity="0.25"/>
-                  <path d="M12 4C7.58 4 4 7.13 4 11c0 2.4 1.37 4.52 3.47 5.86-.15.53-.55 1.93-.63 2.23-.1.38.14.37.3.27.12-.08 1.96-1.3 2.76-1.83.67.1 1.36.15 2.1.15 4.42 0 8-3.13 8-7s-3.58-7-8-7z" fill="white"/>
-                </svg>
-                <span className="text-xs font-bold tracking-[0.15em] uppercase" style={{ color: "rgba(255,255,255,0.85)" }}>LINEお友達追加特典</span>
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-1" style={{ color: "#ffffff", lineHeight: 1.3 }}>
+              <p className="text-xs font-bold tracking-[0.12em] uppercase mb-1.5" style={{ color: "rgba(255,255,255,0.7)" }}>LINEお友達追加特典</p>
+              <h3 className="text-lg md:text-xl font-bold" style={{ color: "#ffffff" }}>
                 LINE登録で、おそうじがもっと便利に。
               </h3>
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>予約から特典まで、すべてLINEで完結。</p>
             </div>
 
             {/* 中：メリットリスト */}
-            <div className="flex flex-col gap-2 md:flex-shrink-0">
+            <div className="flex flex-col gap-1.5 md:flex-shrink-0">
               {[
-                "24時間・年中無休で予約可能",
-                "空き状況がWEBで全部見える",
+                "24時間予約・空き確認",
                 "電話なしで予約完結",
-                "「いつがお得か丸わかり」おそうじカレンダープレゼント",
+                "おそうじカレンダープレゼント",
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)", userSelect: "none" }}>—</span>
-                  <span className="text-sm font-medium" style={{ color: "#ffffff" }}>{text}</span>
+                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.45)", userSelect: "none" }}>—</span>
+                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.9)" }}>{text}</span>
                 </div>
               ))}
             </div>
@@ -415,17 +406,16 @@ export default function Home() {
                 href="https://lin.ee/lQfaoYR"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-col items-center gap-1 px-8 py-4 font-bold transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 font-bold text-sm transition-all duration-200"
                 style={{
                   backgroundColor: "#ffffff",
                   color: "#06C755",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+                  boxShadow: "0 3px 12px rgba(0,0,0,0.12)",
                 }}
                 onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)"}
                 onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)"}
               >
-                <span className="text-base font-bold">LINEで無料登録</span>
-                <span className="text-xs font-normal" style={{ color: "#038a3b" }}>→ 予約・特典を受け取る</span>
+                LINEで無料登録
               </a>
             </div>
 
