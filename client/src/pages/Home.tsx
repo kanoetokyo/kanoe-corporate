@@ -239,7 +239,7 @@ export default function Home() {
       <Reveal>
         <section
           style={{
-            background: "linear-gradient(135deg, #1a2a40 0%, #1e3a5f 60%, #243550 100%)",
+            background: "linear-gradient(135deg, #4ab8d8 0%, #2a8fb5 40%, #1a6fa0 100%)",
             borderBottom: "1px solid #c9a84c",
             position: "relative",
             overflow: "hidden",
