@@ -737,6 +737,46 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* ===== フローティングLINEボタン ===== */}
+      <a
+        href="https://lin.ee/lQfaoYR"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-all duration-300"
+        style={{
+          position: "fixed",
+          bottom: "1.5rem",
+          right: "1.5rem",
+          zIndex: 100,
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          backgroundColor: "#06C755",
+          color: "#ffffff",
+          padding: "0.75rem 1.25rem",
+          borderRadius: "9999px",
+          boxShadow: "0 4px 20px rgba(6,199,85,0.45), 0 2px 8px rgba(0,0,0,0.15)",
+          fontWeight: 700,
+          fontSize: "0.875rem",
+          textDecoration: "none",
+          whiteSpace: "nowrap",
+        }}
+        onMouseEnter={e => {
+          (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.04)";
+          (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 28px rgba(6,199,85,0.55), 0 4px 12px rgba(0,0,0,0.18)";
+        }}
+        onMouseLeave={e => {
+          (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0) scale(1)";
+          (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(6,199,85,0.45), 0 2px 8px rgba(0,0,0,0.15)";
+        }}
+      >
+        {/* LINEアイコン */}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3C7.03 3 3 6.58 3 11c0 2.77 1.58 5.22 4 6.77-.17.62-.64 2.23-.73 2.58-.11.44.16.43.34.31.14-.09 2.27-1.5 3.19-2.12.77.11 1.57.17 2.2.17 4.97 0 9-3.58 9-8s-4.03-8-9-8z" fill="white"/>
+        </svg>
+        <span>LINEで無料登録</span>
+      </a>
     </div>
   );
 }
