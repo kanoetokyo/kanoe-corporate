@@ -29,7 +29,7 @@ const C = {
 
 const navLinks = [
   { label: "おそうじ本舗", href: "https://osouji-oimachi.com/", external: true },
-  { label: "ご予約", href: "https://miniapp.line.me/2008378005-2WA3vWn4", external: true },
+  { label: "ご予約", href: "https://lin.ee/lQfaoYR", external: true },
   { label: "外壁洗浄", href: "https://www.osoujihonpo.com/campaign/outerwall/?utm_source=google&utm_medium=cpc&utm_campaign=gs_31&utm_content=gs_038&utm_term=%E3%81%8A%E3%81%9D%E3%81%86%E3%81%98%E6%9C%AC%E8%88%97%20%E5%A4%96%E5%A3%81%E6%B4%97%E6%B5%84_p_c_22377521737_175695704614_783378233018&argument=kXLBSm4y&dmai=a67e2539f72433&gad_source=1&gad_campaignid=22377521737&gbraid=0AAAAACnAqqzNGANzsg_SvMpYjsZfZNvuE&gclid=CjwKCAiAh5XNBhAAEiwA_Bu8FTyZ-bOM_b2hpXhQh89Y7IqvtAy7VF8dC7bbZROaJDnb2BN9070-4xoCeAAQAvD_BwE", external: true },
 ];
 
@@ -219,7 +219,7 @@ export default function Home() {
                 <ExternalIcon />
               </a>
               <a
-                href="https://miniapp.line.me/2008378005-2WA3vWn4"
+                href="https://lin.ee/lQfaoYR"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 transition-all duration-200"
@@ -434,7 +434,7 @@ export default function Home() {
 
               {/* LINEで予約 */}
               <a
-                href="https://miniapp.line.me/2008378005-2WA3vWn4"
+                href="https://lin.ee/lQfaoYR"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col gap-3 p-5 transition-all duration-200"
