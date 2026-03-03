@@ -821,7 +821,7 @@ export default function Home() {
               {/* 実績バッジ */}
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  "開業6年で売上2億円以上",
+                  "一人から始めて開業6年で売上2億円以上",
                   "40名以上の組織に成長",
                   "おそうじ本舗フランチャイズ全国最優秀賞2年連続受賞",
                 ].map((badge, i) => (
