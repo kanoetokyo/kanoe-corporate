@@ -207,30 +207,96 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://osouji-oimachi.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 transition-all duration-200"
-                style={{ backgroundColor: C.bgWhite, color: C.navy }}
-                onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"}
-                onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
-              >
-                おそうじ本舗サイトへ
-                <ExternalIcon />
-              </a>
-              <a
                 href="https://lin.ee/lQfaoYR"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 transition-all duration-200"
-                style={{ border: "1px solid rgba(255,255,255,0.35)", color: "rgba(255,255,255,0.85)" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.1)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
+                style={{ backgroundColor: "#06C755", color: "#ffffff" }}
+                onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"}
+                onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
               >
-                LINEで予約
+                LINEで無料登録
                 <ExternalIcon />
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== LINE誘導バナー ===== */}
+      <section
+        style={{
+          background: "linear-gradient(135deg, #06C755 0%, #04a847 60%, #038a3b 100%)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* 装飾円 */}
+        <div style={{
+          position: "absolute", top: "-60px", right: "-60px",
+          width: "220px", height: "220px", borderRadius: "50%",
+          backgroundColor: "rgba(255,255,255,0.06)", pointerEvents: "none",
+        }} />
+        <div style={{
+          position: "absolute", bottom: "-40px", left: "30%",
+          width: "140px", height: "140px", borderRadius: "50%",
+          backgroundColor: "rgba(255,255,255,0.04)", pointerEvents: "none",
+        }} />
+
+        <div className="container py-8 md:py-10" style={{ position: "relative" }}>
+          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+
+            {/* 左：メッセージ */}
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-3">
+                {/* LINEアイコン */}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="6" fill="white" fillOpacity="0.25"/>
+                  <path d="M12 4C7.58 4 4 7.13 4 11c0 2.4 1.37 4.52 3.47 5.86-.15.53-.55 1.93-.63 2.23-.1.38.14.37.3.27.12-.08 1.96-1.3 2.76-1.83.67.1 1.36.15 2.1.15 4.42 0 8-3.13 8-7s-3.58-7-8-7z" fill="white"/>
+                </svg>
+                <span className="text-xs font-bold tracking-[0.15em] uppercase" style={{ color: "rgba(255,255,255,0.85)" }}>LINE導入特典</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold mb-1" style={{ color: "#ffffff", lineHeight: 1.3 }}>
+                LINE登録で、おそうじがもっと便利に。
+              </h3>
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>予約から特典まで、すべてLINEで完結。</p>
+            </div>
+
+            {/* 中：メリットリスト */}
+            <div className="flex flex-col gap-2 md:flex-shrink-0">
+              {[
+                { icon: "🕐", text: "24時間・年中無休で予約可能" },
+                { icon: "📅", text: "空き状況がWEBで全部見える" },
+                { icon: "📱", text: "電話なしで予約完結" },
+                { icon: "🎁", text: "「いつがお得か丸わかり」おそうじカレンダープレゼント" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <span className="text-base" style={{ lineHeight: 1 }}>{item.icon}</span>
+                  <span className="text-sm font-medium" style={{ color: "#ffffff" }}>{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* 右：CTAボタン */}
+            <div className="flex-shrink-0">
+              <a
+                href="https://lin.ee/lQfaoYR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-col items-center gap-1 px-8 py-4 font-bold transition-all duration-200"
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#06C755",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+                }}
+                onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)"}
+                onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)"}
+              >
+                <span className="text-base font-bold">LINEで無料登録</span>
+                <span className="text-xs font-normal" style={{ color: "#038a3b" }}>→ 予約・特典を受け取る</span>
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
