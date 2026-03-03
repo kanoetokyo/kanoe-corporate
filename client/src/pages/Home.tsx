@@ -202,7 +202,7 @@ export default function Home() {
             </h1>
             <p className="text-sm md:text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
               おそうじ本舗フランチャイズとして<br />
-              東京・神奈川エリアで6店舗を展開。<br />
+              関東・関西で7店舗を展開。<br />
               2年連続、全国最優秀賞を受賞。
             </p>
             <div className="flex flex-wrap gap-3">
@@ -235,24 +235,109 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 受賞実績バナー ===== */}
+      {/* ===== 受賞実績バナー（ゴールド） ===== */}
+      <Reveal>
+        <section
+          style={{
+            background: "linear-gradient(135deg, #1a2a40 0%, #1e3a5f 60%, #243550 100%)",
+            borderBottom: "1px solid #c9a84c",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          {/* 背景装飾ライン */}
+          <div style={{
+            position: "absolute", inset: 0, pointerEvents: "none",
+            background: "repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,168,76,0.03) 40px, rgba(201,168,76,0.03) 41px)",
+          }} />
+          <div className="container py-10 md:py-12" style={{ position: "relative" }}>
+            {/* ゴールドラベル */}
+            <div className="flex items-center gap-2 mb-6">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="#c9a84c" stroke="#c9a84c" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="text-xs tracking-[0.2em] uppercase font-medium" style={{ color: "#c9a84c" }}>Award</span>
+            </div>
+            <p className="text-base font-bold mb-8" style={{ color: "rgba(255,255,255,0.9)" }}>
+              おそうじ本舗フランチャイズ最優秀賞
+            </p>
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-0">
+              {/* 1位 */}
+              <div className="flex-1 flex flex-col gap-1">
+                <div className="flex items-baseline gap-2">
+                  <span
+                    className="font-bold"
+                    style={{
+                      fontSize: "3.5rem",
+                      lineHeight: 1,
+                      background: "linear-gradient(135deg, #f5d67a 0%, #c9a84c 50%, #e8c96a 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >1</span>
+                  <span className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>位</span>
+                </div>
+                <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>1,803店舗中</p>
+              </div>
+              {/* 区切り */}
+              <div style={{ width: "1px", backgroundColor: "rgba(201,168,76,0.25)" }} className="hidden sm:block" />
+              {/* 2年連続 */}
+              <div className="flex-1 flex flex-col gap-1 sm:pl-8">
+                <div className="flex items-baseline gap-2">
+                  <span
+                    className="font-bold"
+                    style={{
+                      fontSize: "3.5rem",
+                      lineHeight: 1,
+                      background: "linear-gradient(135deg, #f5d67a 0%, #c9a84c 50%, #e8c96a 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >2</span>
+                  <span className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>年連続</span>
+                </div>
+                <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>2024年・2025年 受賞</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Reveal>
+
+      {/* ===== チーム・スローガンセクション ===== */}
       <Reveal>
         <section style={{ backgroundColor: C.bgWhite, borderBottom: `1px solid ${C.border}` }}>
-          <div className="container py-8 md:py-10">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-12">
-              <div>
-                <p className="text-xs tracking-[0.15em] uppercase mb-1" style={{ color: C.textLight }}>Award</p>
-                <p className="text-sm font-medium" style={{ color: C.text }}>おそうじ本舗フランチャイズ最優秀賞</p>
+          {/* チーム画像 */}
+          <div style={{ backgroundColor: C.bg }}>
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/kanoe-team_34dfcc30.jpeg"
+              alt="株式会社カノエ チーム"
+              className="w-full object-cover"
+              style={{ maxHeight: "420px", objectPosition: "center top" }}
+            />
+          </div>
+          {/* スローガン */}
+          <div className="container py-12 md:py-16">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+              <div className="flex-1">
+                <p className="text-xs tracking-[0.15em] uppercase mb-3" style={{ color: C.textLight }}>Slogan</p>
+                <p
+                  className="text-xl md:text-2xl font-bold leading-relaxed"
+                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif" }}
+                >
+                  おそうじで<br />キレイで豊かなくらしを
+                </p>
               </div>
-              <div style={{ width: "1px", height: "2.5rem", backgroundColor: C.border }} className="hidden sm:block" />
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold" style={{ color: C.navy }}>1</span>
-                <span className="text-sm" style={{ color: C.textMuted }}>位 / 1,803店舗中</span>
-              </div>
-              <div style={{ width: "1px", height: "2.5rem", backgroundColor: C.border }} className="hidden sm:block" />
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold" style={{ color: C.navy }}>2</span>
-                <span className="text-sm" style={{ color: C.textMuted }}>年連続（2024・2025年）</span>
+              <div style={{ width: "1px", minHeight: "4rem", backgroundColor: C.border }} className="hidden md:block self-stretch" />
+              <div className="flex-1">
+                <p className="text-xs tracking-[0.15em] uppercase mb-3" style={{ color: C.textLight }}>Philosophy</p>
+                <p
+                  className="text-xl md:text-2xl font-bold leading-relaxed"
+                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif" }}
+                >
+                  スタッフが明るいお店は<br />良いお店
+                </p>
               </div>
             </div>
           </div>
