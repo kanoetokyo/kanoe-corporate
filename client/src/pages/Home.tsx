@@ -77,28 +77,24 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // 清掃事例ギャラリーデータ
 const galleryItems = [
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    label: "エアコンクリーニング",
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/IMG_4315_e3d0afca.JPG",
+    label: "エアコンクリーニング（作業中）",
   },
   {
-    src: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80",
-    label: "バスルームクリーニング",
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/IMG_4375_788696dc.JPG",
+    label: "お客様へのご説明",
   },
   {
-    src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
-    label: "キッチンクリーニング",
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/IMG_4310_5eb5210b.JPG",
+    label: "エアコン分解クリーニング",
   },
   {
-    src: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80",
-    label: "居室・リビングクリーニング",
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/0215_240110_40da0969.JPG",
+    label: "私たちの想い",
   },
   {
-    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-    label: "オフィス・共用部清掃",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    label: "外壁・ベランダ洗浄",
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/0086_240110_1043276f.JPG",
+    label: "おそうじ本舗 大井町店",
   },
 ];
 
@@ -850,7 +846,7 @@ export default function Home() {
               ))}
             </div>
 
-            <p className="text-xs mt-4" style={{ color: C.textLight }}>※画像はイメージです。実際の作業内容は店舗により異なります。</p>
+            <p className="text-xs mt-4" style={{ color: C.textLight }}>実際の作業・店舗の様子です。</p>
           </div>
         </section>
       </Reveal>
