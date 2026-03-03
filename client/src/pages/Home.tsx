@@ -784,6 +784,111 @@ export default function Home() {
         </section>
       </Reveal>
 
+      {/* ===== コンサルティングサービスセクション ===== */}
+      <Reveal>
+        <section
+          style={{
+            background: `linear-gradient(135deg, ${C.navy} 0%, #0f2540 100%)`,
+            position: "relative",
+            overflow: "hidden",
+          }}
+          className="py-16 md:py-24"
+        >
+          {/* 背景装飾 */}
+          <div style={{
+            position: "absolute", inset: 0, pointerEvents: "none",
+            background: "repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px)",
+          }} />
+
+          <div className="container" style={{ position: "relative" }}>
+            <div className="max-w-3xl">
+              {/* ラベル */}
+              <p className="text-xs tracking-[0.18em] uppercase mb-4 font-medium" style={{ color: "rgba(255,255,255,0.45)" }}>Consulting Service</p>
+
+              {/* タイトル */}
+              <h2
+                className="text-2xl md:text-4xl font-bold leading-tight mb-6"
+                style={{ color: "#ffffff", fontFamily: "'Noto Sans JP', sans-serif" }}
+              >
+                脱一人親方塾<br />
+                <span style={{ color: "#f5d67a" }}>ブルカラー経営参謀</span>
+              </h2>
+
+              {/* リード文 */}
+              <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.75)" }}>
+                ブルーカラーの職種を専門に、組織作り・営業強化・業務フローの構築・DXまで、一人親方から組織化を目指す方、または組織化していてもDXが進んでいない会社を一気通貫で支援します。
+              </p>
+
+              {/* 実績バッジ */}
+              <div className="flex flex-wrap gap-3 mb-10">
+                {[
+                  "開業6年で売上2億円以上",
+                  "40名以上の組織に成長",
+                  "おそうじ本舗フランチャイズ全国最優秀賞2年連続受賞",
+                ].map((badge, i) => (
+                  <span
+                    key={i}
+                    className="inline-block text-xs font-medium px-3 py-1.5"
+                    style={{
+                      border: "1px solid rgba(245,214,122,0.4)",
+                      color: "#f5d67a",
+                      backgroundColor: "rgba(245,214,122,0.08)",
+                    }}
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
+
+              {/* 支援内容リスト */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+                {[
+                  { title: "組織作り・人材育成", desc: "一人親方からチーム化へ。採用・定着・評価制度を構築" },
+                  { title: "営業強化・集客改善", desc: "Web・ SNS・口コミを活用した集客戦略の構築" },
+                  { title: "業務フロー最適化", desc: "無駄な作業・管理工数を削減し、利益改善を実現" },
+                  { title: "DX導入支援", desc: "デジタルツール・システム導入で業務を自動化" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="p-4"
+                    style={{
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      backgroundColor: "rgba(255,255,255,0.04)",
+                    }}
+                  >
+                    <p className="text-sm font-bold mb-1" style={{ color: "#ffffff" }}>{item.title}</p>
+                    <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* 導線エリア */}
+              <div
+                className="flex flex-col sm:flex-row sm:items-center gap-4 p-5"
+                style={{ border: "1px solid rgba(245,214,122,0.25)", backgroundColor: "rgba(245,214,122,0.05)" }}
+              >
+                <div className="flex-1">
+                  <p className="text-sm font-bold mb-0.5" style={{ color: "#f5d67a" }}>詳細ページは構築中</p>
+                  <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>気になる方は、まずはお気軽にお問い合わせください。</p>
+                </div>
+                <a
+                  href="https://lin.ee/lQfaoYR"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition-all duration-200 flex-shrink-0"
+                  style={{ backgroundColor: "#f5d67a", color: "#1a1a19" }}
+                  onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"}
+                  onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
+                >
+                  LINEでお問い合わせ
+                  <ExternalIcon />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Reveal>
+
       {/* ===== 会社概要セクション ===== */}
       <Reveal>
         <section style={{ backgroundColor: C.bg }} className="py-14 md:py-20">
