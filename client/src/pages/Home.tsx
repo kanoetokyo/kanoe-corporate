@@ -409,12 +409,15 @@ export default function Home() {
               ))}
               <a
                 href="tel:0120197576"
-                className="text-xs font-medium px-3 py-1.5 transition-all duration-200"
-                style={{ border: `1px solid ${C.border}`, color: C.text, backgroundColor: C.bg }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.navy; (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; (e.currentTarget as HTMLAnchorElement).style.borderColor = C.navy; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.bg; (e.currentTarget as HTMLAnchorElement).style.color = C.text; (e.currentTarget as HTMLAnchorElement).style.borderColor = C.border; }}
+                className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 transition-all duration-200"
+                style={{ border: `1.5px solid ${C.navy}`, color: C.navy, backgroundColor: C.bg, borderRadius: "4px" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.navy; (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.bg; (e.currentTarget as HTMLAnchorElement).style.color = C.navy; }}
               >
-                0120-19-7576
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
+                </svg>
+                <span>0120-19-7576</span>
               </a>
             </nav>
 
@@ -1106,6 +1109,43 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* ===== フローティング電話ボタン ===== */}
+      <a
+        href="tel:0120197576"
+        className="transition-all duration-300"
+        style={{
+          position: "fixed",
+          bottom: "6rem",
+          right: "1.5rem",
+          zIndex: 100,
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          backgroundColor: C.navy,
+          color: "#ffffff",
+          padding: "0.75rem 1.25rem",
+          borderRadius: "9999px",
+          boxShadow: "0 4px 20px rgba(0,91,172,0.4), 0 2px 8px rgba(0,0,0,0.15)",
+          fontWeight: 700,
+          fontSize: "0.875rem",
+          textDecoration: "none",
+          whiteSpace: "nowrap",
+        }}
+        onMouseEnter={e => {
+          (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.04)";
+          (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 28px rgba(0,91,172,0.55), 0 4px 12px rgba(0,0,0,0.18)";
+        }}
+        onMouseLeave={e => {
+          (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0) scale(1)";
+          (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(0,91,172,0.4), 0 2px 8px rgba(0,0,0,0.15)";
+        }}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/>
+        </svg>
+        <span>0120-19-7576</span>
+      </a>
 
       {/* ===== フローティングLINEボタン ===== */}
       <a
