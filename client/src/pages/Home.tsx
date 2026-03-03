@@ -28,15 +28,9 @@ const C = {
 };
 
 const navLinks = [
-  { label: "運営店舗", href: "#stores", external: false },
-  { label: "サービス", href: "#services", external: false },
-  { label: "コンサルティング", href: "#consulting", external: false },
-  { label: "会社概要", href: "#company", external: false },
-];
-
-const externalLinks = [
   { label: "おそうじ本舗", href: "https://osouji-oimachi.com/", external: true },
   { label: "ご予約", href: "https://lin.ee/lQfaoYR", external: true },
+  { label: "外壁洗浄", href: "https://www.osoujihonpo.com/campaign/outerwall/?utm_source=google&utm_medium=cpc&utm_campaign=gs_31&utm_content=gs_038&utm_term=%E3%81%8A%E3%81%9D%E3%81%86%E3%81%98%E6%9C%AC%E8%88%97%20%E5%A4%96%E5%A3%81%E6%B4%97%E6%B5%84_p_c_22377521737_175695704614_783378233018&argument=kXLBSm4y&dmai=a67e2539f72433&gad_source=1&gad_campaignid=22377521737&gbraid=0AAAAACnAqqzNGANzsg_SvMpYjsZfZNvuE&gclid=CjwKCAiAh5XNBhAAEiwA_Bu8FTyZ-bOM_b2hpXhQh89Y7IqvtAy7VF8dC7bbZROaJDnb2BN9070-4xoCeAAQAvD_BwE", external: true },
 ];
 
 const storeGroups = [
@@ -375,31 +369,13 @@ export default function Home() {
             </a>
 
             {/* デスクトップナビ */}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm transition-colors duration-200"
-                  style={{ color: C.textMuted }}
-                  onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.color = C.navy}
-                  onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.color = C.textMuted}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const id = link.href.replace("#", "");
-                    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <div style={{ width: "1px", height: "1.2rem", backgroundColor: C.border }} />
-              {externalLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="flex items-center gap-1 text-sm transition-colors duration-200"
                   style={{ color: C.textMuted }}
                   onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.color = C.navy}
@@ -450,26 +426,8 @@ export default function Home() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm py-2"
-                style={{ color: C.textMuted, borderBottom: `1px solid ${C.border}` }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMenuOpen(false);
-                  setTimeout(() => {
-                    const id = link.href.replace("#", "");
-                    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }, 200);
-                }}
-              >
-                {link.label}
-              </a>
-            ))}
-            {externalLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-1.5 text-sm py-2"
                 style={{ color: C.textMuted, borderBottom: `1px solid ${C.border}` }}
                 onClick={() => setMenuOpen(false)}
@@ -660,18 +618,44 @@ export default function Home() {
 
       {/* ===== チーム画像＋スローガンオーバーレイセクション ===== */}
       <Reveal>
-        <section style={{ backgroundColor: C.bgWhite, borderBottom: `1px solid ${C.border}` }}>
-          {/* スローガンエリア（画像上部） */}
+        <section style={{ backgroundColor: C.bgWhite, borderBottom: `1px solid ${C.border}`, position: "relative", overflow: "hidden" }}>
+          {/* 画像 */}
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/kanoe-team_34dfcc30.jpeg"
+            alt="株式会社カノエ チーム"
+            className="w-full object-cover block"
+            style={{ maxHeight: "420px", objectPosition: "center top" }}
+          />
+          {/* 画像上部にグラデーションオーバーレイ */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: "55%",
+              background: "linear-gradient(to bottom, rgba(248,248,247,0.92) 0%, rgba(248,248,247,0.7) 50%, rgba(248,248,247,0) 100%)",
+              pointerEvents: "none",
+            }}
+          />
+          {/* スローガン（画像上部に重ねる） */}
           <div
             className="container"
-            style={{ paddingTop: "2.5rem", paddingBottom: "2rem" }}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "100%",
+              paddingTop: "2rem",
+            }}
           >
             <div className="flex flex-row gap-6 md:gap-12 items-start">
               <div className="flex-1">
                 <p className="text-xs tracking-[0.15em] uppercase mb-2 font-medium" style={{ color: C.navyLight }}>Slogan</p>
                 <p
                   className="text-lg md:text-2xl font-bold leading-snug"
-                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif" }}
+                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif", textShadow: "0 1px 4px rgba(248,248,247,0.8)" }}
                 >
                   おそうじで<br />キレイで豊かなくらしを
                 </p>
@@ -681,26 +665,19 @@ export default function Home() {
                 <p className="text-xs tracking-[0.15em] uppercase mb-2 font-medium" style={{ color: C.navyLight }}>Philosophy</p>
                 <p
                   className="text-lg md:text-2xl font-bold leading-snug"
-                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif" }}
+                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif", textShadow: "0 1px 4px rgba(248,248,247,0.8)" }}
                 >
                   スタッフが明るいお店は<br />良いお店
                 </p>
               </div>
             </div>
           </div>
-          {/* 画像（全体表示） */}
-          <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/kanoe-team_34dfcc30.jpeg"
-            alt="株式会社カノエ チーム"
-            className="w-full block"
-            style={{ display: "block", width: "100%", height: "auto" }}
-          />
         </section>
       </Reveal>
 
       {/* ===== 運営店舗セクション ===== */}
       <Reveal>
-        <section id="stores" style={{ backgroundColor: C.bg }} className="py-14 md:py-20">
+        <section style={{ backgroundColor: C.bg }} className="py-14 md:py-20">
           <div className="container">
             <div className="mb-8">
               <p className="text-xs tracking-[0.15em] uppercase mb-2" style={{ color: C.textLight }}>Our Stores</p>
@@ -739,7 +716,7 @@ export default function Home() {
 
       {/* ===== サービスリンクセクション ===== */}
       <Reveal>
-        <section id="services" style={{ backgroundColor: C.bgWhite, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }} className="py-14 md:py-20">
+        <section style={{ backgroundColor: C.bgWhite, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }} className="py-14 md:py-20">
           <div className="container">
             <div className="mb-8">
               <p className="text-xs tracking-[0.15em] uppercase mb-2" style={{ color: C.textLight }}>Services</p>
@@ -937,11 +914,11 @@ export default function Home() {
       </Reveal>
 
       {/* ===== コンサルティングサービスセクション ===== */}
-      <div id="consulting"><ConsultingSection /></div>
+      <ConsultingSection />
 
       {/* ===== 会社概要セクション ===== */}
       <Reveal>
-        <section id="company" style={{ backgroundColor: C.bg }} className="py-14 md:py-20">
+        <section style={{ backgroundColor: C.bg }} className="py-14 md:py-20">
           <div className="container">
             <div className="mb-8">
               <p className="text-xs tracking-[0.15em] uppercase mb-2" style={{ color: C.textLight }}>Company</p>
