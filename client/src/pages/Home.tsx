@@ -339,7 +339,7 @@ function ConsultingSection() {
                     <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>気になる方は、まずはお気軽にお問い合わせください。</p>
                   </div>
                   <a
-                    href="https://lin.ee/lQfaoYR"
+                    href="https://lin.ee/FyWcNMb"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition-all duration-200 flex-shrink-0"
