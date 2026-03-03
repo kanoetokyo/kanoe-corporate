@@ -464,20 +464,35 @@ export default function Home() {
       {/* ===== ヒーローセクション ===== */}
       <section
         className="pt-14 md:pt-16"
-        style={{ backgroundColor: C.navy }}
+        style={{
+          position: "relative",
+          backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/0086_240110_1043276f.JPG')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
-        <div className="container py-16 md:py-24">
+        {/* グレー半透明オーバーレイ */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(30, 35, 45, 0.62)",
+            zIndex: 0,
+          }}
+        />
+        <div className="container py-16 md:py-24" style={{ position: "relative", zIndex: 1 }}>
           <div className="max-w-xl">
-            <p className="text-xs tracking-[0.18em] uppercase mb-5 font-medium" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p className="text-xs tracking-[0.18em] uppercase mb-5 font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>
               Cleaning Professional
             </p>
             <h1
               className="text-3xl md:text-5xl font-bold leading-tight mb-5"
-              style={{ color: "#ffffff", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 700 }}
+              style={{ color: "#ffffff", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 700, textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}
             >
               株式会社カノエ
             </h1>
-            <p className="text-sm md:text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
+            <p className="text-sm md:text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.85)", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
               おそうじ本舗フランチャイズとして<br />
               関東・関西で7店舗を展開。<br />
               2年連続、全国最優秀賞を受賞。
