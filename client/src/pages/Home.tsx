@@ -102,6 +102,46 @@ const galleryItems = [
   },
 ];
 
+// お客様の声（ダミーデータ）
+const reviews = [
+  {
+    name: "T. Yamamoto",
+    stars: 5,
+    date: "2025年11月",
+    text: "エアコンクリーニングをお願いしました。購入から数年たったエアコンが新品同様になり、冷気の効きも明らかに向上しました。スタッフの方も丁寧で作業も丁寧で、またお願いしたいです。",
+  },
+  {
+    name: "K. Sato",
+    stars: 5,
+    date: "2025年10月",
+    text: "浴室クリーニングを依頼しました。カビや水垂れがひどくて気になっていたのですが、こんなにキレイになると思わなかったです。作業前後の写真を見せてもらえて、安心してお願いできました。",
+  },
+  {
+    name: "M. Tanaka",
+    stars: 5,
+    date: "2025年9月",
+    text: "キッチンクリーニングをお願いしました。コンロの五徳やレンジ周りの決して落とせなかった汚れもぴかぴかに。LINEで簡単に予約できて、当日のスタッフさんも明るくて気持よく作業してくれました。",
+  },
+  {
+    name: "A. Watanabe",
+    stars: 5,
+    date: "2025年8月",
+    text: "引っ越し後のハウスクリーニングをお願いしました。時間通りに来てくれて、居室・浴室・トイレすべてピカピカにしていただきました。新居地で気持ちよくスタートできました。",
+  },
+  {
+    name: "H. Nakamura",
+    stars: 5,
+    date: "2025年7月",
+    text: "マンションの排水管洗浄を依頼しました。流れが悪くなっていたのがすっかり解消されました。説明も丁寧で、作業後の確認もしっかりしていただけて安心でした。",
+  },
+  {
+    name: "Y. Ito",
+    stars: 5,
+    date: "2025年6月",
+    text: "定期清掃をお願いしてから、家の中が常にキレイに保たれています。スタッフの方が明るくて作業も丁寧で、毎回安心してお任せできます。またお願いしたいです。",
+  },
+];
+
 // その他のおそうじ（アコーディオン）
 const otherServices = [
   {
@@ -685,6 +725,71 @@ export default function Home() {
             </div>
 
             <p className="text-xs mt-4" style={{ color: C.textLight }}>※画像はイメージです。実際の作業内容は店舗により異なります。</p>
+          </div>
+        </section>
+      </Reveal>
+
+      {/* ===== お客様の声セクション ===== */}
+      <Reveal>
+        <section style={{ backgroundColor: C.bgWhite, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }} className="py-14 md:py-20">
+          <div className="container">
+            <div className="mb-10">
+              <p className="text-xs tracking-[0.15em] uppercase mb-2" style={{ color: C.textLight }}>Reviews</p>
+              <h2 className="text-xl font-bold" style={{ color: C.text }}>お客様の声</h2>
+              <div className="flex items-center gap-2 mt-2">
+                <div className="flex gap-0.5">
+                  {[1,2,3,4,5].map(s => (
+                    <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="#f5a623">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                  ))}
+                </div>
+                <span className="text-sm font-medium" style={{ color: C.text }}>4.9</span>
+                <span className="text-xs" style={{ color: C.textMuted }}>Googleビジネスプロフィール平均（サンプル）</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {reviews.map((review, i) => (
+                <Reveal key={i} delay={i * 80}>
+                  <div
+                    className="flex flex-col gap-3 p-5 h-full"
+                    style={{ border: `1px solid ${C.border}`, backgroundColor: C.bg }}
+                  >
+                    {/* 星評価 */}
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: review.stars }).map((_, s) => (
+                        <svg key={s} width="13" height="13" viewBox="0 0 24 24" fill="#f5a623">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                      ))}
+                    </div>
+                    {/* レビュー本文 */}
+                    <p className="text-sm leading-relaxed flex-1" style={{ color: C.textMuted }}>「{review.text}」</p>
+                    {/* 投稿者 */}
+                    <div className="flex items-center gap-2 pt-2" style={{ borderTop: `1px solid ${C.border}` }}>
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                        style={{ backgroundColor: C.navyBg, color: C.navy }}
+                      >
+                        {review.name.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="text-xs font-medium" style={{ color: C.text }}>{review.name}</p>
+                        <p className="text-xs" style={{ color: C.textLight }}>{review.date}</p>
+                      </div>
+                      <div className="ml-auto">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                          <path d="M21.35 11.1h-9.17v2.73h5.51c-.33 1.81-1.92 4.56-5.51 4.56-3.31 0-6.01-2.74-6.01-6.12s2.7-6.12 6.01-6.12c1.88 0 3.14.8 3.86 1.49l2.63-2.54C17.07 3.99 14.9 3 12.18 3 7.13 3 3 7.13 3 12.18s4.13 9.18 9.18 9.18c5.3 0 8.82-3.72 8.82-8.96 0-.6-.07-1.06-.15-1.3z" fill="#4285F4"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <p className="text-xs mt-6" style={{ color: C.textLight }}>※上記はサンプルのレビューです。実際のGoogleレビューは各店舗のGoogleビジネスプロフィールでご確認いただけます。</p>
           </div>
         </section>
       </Reveal>
