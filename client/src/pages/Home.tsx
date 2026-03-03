@@ -74,6 +74,83 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
+// その他のおそうじ（アコーディオン）
+const otherServices = [
+  {
+    title: "オフィス定期清掃",
+    description: "オフィス・事務所の定期清掃サービスです。床・トイレ・共用部など、プロのスタッフが定期的に清掃いたします。清潔な職場環境を維持することで、従業員の生産性向上にもつながります。",
+    detail: "対応エリア：東京・神奈川・大阪\n頻度：週1回〜月1回など柔軟に対応\nお見積もり・ご相談はLINEまたはお電話にて承ります。",
+  },
+  {
+    title: "マンション定期清掃",
+    description: "マンション・アパートの共用部（エントランス・廊下・階段・エレベーター等）の定期清掃サービスです。入居者様が快適に過ごせる環境づくりをサポートします。",
+    detail: "対応エリア：東京・神奈川・大阪\n頻度：週1回〜月1回など柔軟に対応\n管理組合・管理会社様からのご依頼も歓迎いたします。",
+  },
+  {
+    title: "マンスリーマンション入れ替え清掃",
+    description: "マンスリーマンション・ウィークリーマンションの退去・入居時の清掃サービスです。短期間での対応も可能で、次の入居者様に気持ちよく使っていただける状態に仕上げます。",
+    detail: "対応エリア：東京・神奈川・大阪\n短期対応・急ぎの依頼もご相談ください\nまとめて複数室のご依頼も承ります。",
+  },
+  {
+    title: "排水管洗浄",
+    description: "キッチン・浴室・洗面台・トイレなどの排水管の高圧洗浄サービスです。詰まりの予防・解消、臭いの改善に効果的です。定期的なメンテナンスで排水トラブルを未然に防ぎます。",
+    detail: "対応エリア：東京・神奈川・大阪\n戸建て・マンション・オフィスいずれも対応\nご予約・お見積もりはLINEまたはお電話にて。",
+  },
+];
+
+function OtherServices() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  return (
+    <div className="mt-8">
+      <div className="mb-4">
+        <p className="text-xs tracking-[0.15em] uppercase mb-1" style={{ color: C.textLight }}>Other Cleaning</p>
+        <h3 className="text-base font-bold" style={{ color: C.text }}>その他のおそうじ</h3>
+      </div>
+      <div className="flex flex-col gap-2">
+        {otherServices.map((svc, i) => (
+          <div key={i} style={{ border: `1px solid ${C.border}`, backgroundColor: C.bgWhite }}>
+            <button
+              className="w-full flex items-center justify-between px-5 py-4 text-left transition-colors duration-200"
+              style={{ backgroundColor: openIndex === i ? C.navyBg : C.bgWhite }}
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              onMouseEnter={e => { if (openIndex !== i) (e.currentTarget as HTMLButtonElement).style.backgroundColor = C.bg; }}
+              onMouseLeave={e => { if (openIndex !== i) (e.currentTarget as HTMLButtonElement).style.backgroundColor = C.bgWhite; }}
+            >
+              <span className="text-sm font-medium" style={{ color: C.text }}>{svc.title}</span>
+              <svg
+                width="16" height="16" viewBox="0 0 24 24" fill="none"
+                style={{ color: C.textMuted, transform: openIndex === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.25s ease", flexShrink: 0 }}
+              >
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {openIndex === i && (
+              <div className="px-5 pb-5" style={{ borderTop: `1px solid ${C.border}` }}>
+                <p className="text-sm leading-relaxed mt-4 mb-3" style={{ color: C.textMuted }}>{svc.description}</p>
+                <pre className="text-xs leading-relaxed whitespace-pre-wrap" style={{ color: C.textLight, fontFamily: "'Noto Sans JP', sans-serif" }}>{svc.detail}</pre>
+                <div className="mt-4">
+                  <a
+                    href="https://lin.ee/lQfaoYR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium px-4 py-2 transition-opacity duration-200"
+                    style={{ backgroundColor: "#06C755", color: "#ffffff" }}
+                    onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.85"}
+                    onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
+                  >
+                    LINEでお問い合わせ・予約
+                    <ExternalIcon />
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // 外部リンクアイコン
 function ExternalIcon() {
   return (
@@ -205,20 +282,7 @@ export default function Home() {
               関東・関西で7店舗を展開。<br />
               2年連続、全国最優秀賞を受賞。
             </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="https://lin.ee/lQfaoYR"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 transition-all duration-200"
-                style={{ backgroundColor: "#06C755", color: "#ffffff" }}
-                onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"}
-                onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
-              >
-                LINEで無料登録
-                <ExternalIcon />
-              </a>
-            </div>
+
           </div>
         </div>
       </section>
@@ -254,7 +318,7 @@ export default function Home() {
                   <rect width="24" height="24" rx="6" fill="white" fillOpacity="0.25"/>
                   <path d="M12 4C7.58 4 4 7.13 4 11c0 2.4 1.37 4.52 3.47 5.86-.15.53-.55 1.93-.63 2.23-.1.38.14.37.3.27.12-.08 1.96-1.3 2.76-1.83.67.1 1.36.15 2.1.15 4.42 0 8-3.13 8-7s-3.58-7-8-7z" fill="white"/>
                 </svg>
-                <span className="text-xs font-bold tracking-[0.15em] uppercase" style={{ color: "rgba(255,255,255,0.85)" }}>LINE導入特典</span>
+                <span className="text-xs font-bold tracking-[0.15em] uppercase" style={{ color: "rgba(255,255,255,0.85)" }}>LINEお友達追加特典</span>
               </div>
               <h3 className="text-xl md:text-2xl font-bold mb-1" style={{ color: "#ffffff", lineHeight: 1.3 }}>
                 LINE登録で、おそうじがもっと便利に。
@@ -265,14 +329,14 @@ export default function Home() {
             {/* 中：メリットリスト */}
             <div className="flex flex-col gap-2 md:flex-shrink-0">
               {[
-                { icon: "🕐", text: "24時間・年中無休で予約可能" },
-                { icon: "📅", text: "空き状況がWEBで全部見える" },
-                { icon: "📱", text: "電話なしで予約完結" },
-                { icon: "🎁", text: "「いつがお得か丸わかり」おそうじカレンダープレゼント" },
-              ].map((item, i) => (
+                "24時間・年中無休で予約可能",
+                "空き状況がWEBで全部見える",
+                "電話なしで予約完結",
+                "「いつがお得か丸わかり」おそうじカレンダープレゼント",
+              ].map((text, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <span className="text-base" style={{ lineHeight: 1 }}>{item.icon}</span>
-                  <span className="text-sm font-medium" style={{ color: "#ffffff" }}>{item.text}</span>
+                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)", userSelect: "none" }}>—</span>
+                  <span className="text-sm font-medium" style={{ color: "#ffffff" }}>{text}</span>
                 </div>
               ))}
             </div>
@@ -472,7 +536,7 @@ export default function Home() {
               <h2 className="text-xl font-bold" style={{ color: C.text }}>サービス・リンク</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3" id="service-links">
               {/* おそうじ本舗 */}
               <a
                 href="https://osouji-oimachi.com/"
@@ -547,6 +611,9 @@ export default function Home() {
                 </div>
               </a>
             </div>
+
+            {/* その他のおそうじ */}
+            <OtherServices />
           </div>
         </section>
       </Reveal>
