@@ -74,6 +74,34 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
+// 清掃事例ギャラリーデータ
+const galleryItems = [
+  {
+    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    label: "エアコンクリーニング",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80",
+    label: "バスルームクリーニング",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+    label: "キッチンクリーニング",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80",
+    label: "居室・リビングクリーニング",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+    label: "オフィス・共用部清掃",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    label: "外壁・ベランダ洗浄",
+  },
+];
+
 // その他のおそうじ（アコーディオン）
 const otherServices = [
   {
@@ -614,6 +642,49 @@ export default function Home() {
 
             {/* その他のおそうじ */}
             <OtherServices />
+          </div>
+        </section>
+      </Reveal>
+
+      {/* ===== 清掃事例ギャラリーセクション ===== */}
+      <Reveal>
+        <section style={{ backgroundColor: C.bg, borderTop: `1px solid ${C.border}` }} className="py-14 md:py-20">
+          <div className="container">
+            <div className="mb-8">
+              <p className="text-xs tracking-[0.15em] uppercase mb-2" style={{ color: C.textLight }}>Gallery</p>
+              <h2 className="text-xl font-bold" style={{ color: C.text }}>清掃事例</h2>
+              <p className="text-sm mt-2" style={{ color: C.textMuted }}>プロの技術で、ここまでキレイになります。</p>
+            </div>
+
+            {/* メイングリッド */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+              {galleryItems.map((item, i) => (
+                <Reveal key={i} delay={i * 60}>
+                  <div
+                    className="group relative overflow-hidden"
+                    style={{ aspectRatio: "4/3", cursor: "default" }}
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.label}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    {/* オーバーレイ */}
+                    <div
+                      className="absolute inset-0 flex items-end transition-opacity duration-300"
+                      style={{
+                        background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%)",
+                      }}
+                    >
+                      <span className="px-3 pb-3 text-xs font-medium" style={{ color: "#ffffff" }}>{item.label}</span>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <p className="text-xs mt-4" style={{ color: C.textLight }}>※画像はイメージです。実際の作業内容は店舗により異なります。</p>
           </div>
         </section>
       </Reveal>
