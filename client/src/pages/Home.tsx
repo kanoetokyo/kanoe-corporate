@@ -33,13 +33,10 @@ const navLinks = [
   { label: "外壁洗浄", href: "https://www.osoujihonpo.com/campaign/outerwall/?utm_source=google&utm_medium=cpc&utm_campaign=gs_31&utm_content=gs_038&utm_term=%E3%81%8A%E3%81%9D%E3%81%86%E3%81%98%E6%9C%AC%E8%88%97%20%E5%A4%96%E5%A3%81%E6%B4%97%E6%B5%84_p_c_22377521737_175695704614_783378233018&argument=kXLBSm4y&dmai=a67e2539f72433&gad_source=1&gad_campaignid=22377521737&gbraid=0AAAAACnAqqzNGANzsg_SvMpYjsZfZNvuE&gclid=CjwKCAiAh5XNBhAAEiwA_Bu8FTyZ-bOM_b2hpXhQh89Y7IqvtAy7VF8dC7bbZROaJDnb2BN9070-4xoCeAAQAvD_BwE", external: true },
 ];
 
-const stores = [
-  { name: "おそうじ本舗 大井町店", href: "https://osouji-oimachi.com/" },
-  { name: "おそうじ本舗 大田中央店", href: "https://osouji-oimachi.com/" },
-  { name: "おそうじ本舗 幸塚越店", href: "https://osouji-oimachi.com/" },
-  { name: "おそうじ本舗 川崎新町店", href: "https://osouji-oimachi.com/" },
-  { name: "おそうじ本舗 戸越銀座駅前店", href: "https://osouji-oimachi.com/" },
-  { name: "おそうじ本舗 大森南店", href: "https://osouji-oimachi.com/" },
+const storeGroups = [
+  { region: "東京都", stores: ["大井町店", "戸越銀座駅前店", "大田中央店", "大森南店"] },
+  { region: "神奈川県", stores: ["川崎新町店", "幸塚越店"] },
+  { region: "大阪府", stores: ["天満店"] },
 ];
 
 const offices = [
@@ -271,32 +268,29 @@ export default function Home() {
               <h2 className="text-xl font-bold" style={{ color: C.text }}>運営店舗</h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-              {stores.map((store, i) => (
-                <Reveal key={i} delay={i * 50}>
-                  <a
-                    href={store.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center justify-between px-4 py-3.5 transition-all duration-200"
-                    style={{
-                      backgroundColor: C.bgWhite,
-                      border: `1px solid ${C.border}`,
-                    }}
-                    onMouseEnter={e => {
-                      (e.currentTarget as HTMLAnchorElement).style.borderColor = C.navyLight;
-                      (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.navyBg;
-                    }}
-                    onMouseLeave={e => {
-                      (e.currentTarget as HTMLAnchorElement).style.borderColor = C.border;
-                      (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.bgWhite;
-                    }}
-                  >
-                    <span className="text-sm" style={{ color: C.text }}>{store.name}</span>
-                    <span style={{ color: C.textLight }} className="group-hover:text-[#2a5298] transition-colors">
-                      <ExternalIcon />
-                    </span>
-                  </a>
+            <div className="flex flex-col gap-4">
+              {storeGroups.map((group, gi) => (
+                <Reveal key={gi} delay={gi * 80}>
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-0" style={{ border: `1px solid ${C.border}`, backgroundColor: C.bgWhite }}>
+                    {/* 都道府県ラベル */}
+                    <div
+                      className="flex-shrink-0 flex items-center px-4 py-3 sm:w-28"
+                      style={{ backgroundColor: C.navyBg, borderRight: `1px solid ${C.border}` }}
+                    >
+                      <span className="text-xs font-medium" style={{ color: C.navy }}>{group.region}</span>
+                    </div>
+                    {/* 店舗名リスト */}
+                    <div className="flex flex-wrap items-center gap-x-0 px-4 py-3">
+                      {group.stores.map((store, si) => (
+                        <span key={si} className="flex items-center">
+                          <span className="text-sm" style={{ color: C.text }}>{store}</span>
+                          {si < group.stores.length - 1 && (
+                            <span className="mx-2 text-xs" style={{ color: C.textLight }}>・</span>
+                          )}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -407,7 +401,7 @@ export default function Home() {
                 {
                   label: "主な事業",
                   value: "おそうじ本舗フランチャイズ運営",
-                  sub: "大井町店・大田中央店・幸塚越店・川崎新町店・戸越銀座駅前店・大森南店",
+                  sub: "大井町店・戸越銀座駅前店・大田中央店・大森南店・川崎新町店・幸塚越店・天満店",
                 },
                 {
                   label: "受賞歴",
