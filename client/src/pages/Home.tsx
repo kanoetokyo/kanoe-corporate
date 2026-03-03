@@ -810,8 +810,7 @@ export default function Home() {
                 className="text-2xl md:text-4xl font-bold leading-tight mb-6"
                 style={{ color: "#ffffff", fontFamily: "'Noto Sans JP', sans-serif" }}
               >
-                脱一人親方塾<br />
-                <span style={{ color: "#f5d67a" }}>ブルカラー経営参謀</span>
+                <span style={{ color: "#f5d67a" }}>ブルーカラー経営参謀</span>
               </h2>
 
               {/* リード文 */}
@@ -843,8 +842,8 @@ export default function Home() {
               {/* 支援内容リスト */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                 {[
-                  { title: "組織作り・人材育成", desc: "一人親方からチーム化へ。採用・定着・評価制度を構築" },
-                  { title: "営業強化・集客改善", desc: "Web・ SNS・口コミを活用した集客戦略の構築" },
+                  { title: "脱一人親方塾", desc: "一人親方から組織化へ。採用・定着・評価制度を一気通貫で構築" },
+                  { title: "営業強化・集客改善", desc: "Web・SNS・口コミを活用した集客戦略の構築" },
                   { title: "業務フロー最適化", desc: "無駄な作業・管理工数を削減し、利益改善を実現" },
                   { title: "DX導入支援", desc: "デジタルツール・システム導入で業務を自動化" },
                 ].map((item, i) => (
