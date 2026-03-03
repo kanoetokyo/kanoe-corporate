@@ -250,91 +250,105 @@ export default function Home() {
             position: "absolute", inset: 0, pointerEvents: "none",
             background: "repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,168,76,0.03) 40px, rgba(201,168,76,0.03) 41px)",
           }} />
-          <div className="container py-10 md:py-12" style={{ position: "relative" }}>
-            {/* ゴールドラベル */}
-            <div className="flex items-center gap-2 mb-6">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="#c9a84c" stroke="#c9a84c" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="text-xs tracking-[0.2em] uppercase font-medium" style={{ color: "#c9a84c" }}>Award</span>
-            </div>
-            <p className="text-base font-bold mb-8" style={{ color: "rgba(255,255,255,0.9)" }}>
-              おそうじ本舗フランチャイズ最優秀賞
-            </p>
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-0">
-              {/* 1位 */}
-              <div className="flex-1 flex flex-col gap-1">
-                <div className="flex items-baseline gap-2">
-                  <span
-                    className="font-bold"
-                    style={{
-                      fontSize: "3.5rem",
-                      lineHeight: 1,
-                      background: "linear-gradient(135deg, #f5d67a 0%, #c9a84c 50%, #e8c96a 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >1</span>
-                  <span className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>位</span>
-                </div>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>1,803店舗中</p>
+          <div className="container py-5 md:py-6" style={{ position: "relative" }}>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-10">
+              {/* ラベル + タイトル */}
+              <div className="flex items-center gap-3">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="#c9a84c" stroke="#c9a84c" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span className="text-xs tracking-[0.18em] uppercase font-medium" style={{ color: "#c9a84c" }}>Award</span>
+                <span className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>おそうじ本舗フランチャイズ最優秀賞</span>
               </div>
               {/* 区切り */}
-              <div style={{ width: "1px", backgroundColor: "rgba(201,168,76,0.25)" }} className="hidden sm:block" />
+              <div style={{ width: "1px", height: "2rem", backgroundColor: "rgba(201,168,76,0.25)" }} className="hidden sm:block" />
+              {/* 1位 */}
+              <div className="flex items-baseline gap-1.5">
+                <span
+                  className="font-bold"
+                  style={{
+                    fontSize: "2.5rem",
+                    lineHeight: 1,
+                    background: "linear-gradient(135deg, #f5d67a 0%, #c9a84c 50%, #e8c96a 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >1</span>
+                <span className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>位 / 1,803店舗中</span>
+              </div>
+              {/* 区切り */}
+              <div style={{ width: "1px", height: "2rem", backgroundColor: "rgba(201,168,76,0.25)" }} className="hidden sm:block" />
               {/* 2年連続 */}
-              <div className="flex-1 flex flex-col gap-1 sm:pl-8">
-                <div className="flex items-baseline gap-2">
-                  <span
-                    className="font-bold"
-                    style={{
-                      fontSize: "3.5rem",
-                      lineHeight: 1,
-                      background: "linear-gradient(135deg, #f5d67a 0%, #c9a84c 50%, #e8c96a 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >2</span>
-                  <span className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>年連続</span>
-                </div>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>2024年・2025年 受賞</p>
+              <div className="flex items-baseline gap-1.5">
+                <span
+                  className="font-bold"
+                  style={{
+                    fontSize: "2.5rem",
+                    lineHeight: 1,
+                    background: "linear-gradient(135deg, #f5d67a 0%, #c9a84c 50%, #e8c96a 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >2</span>
+                <span className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>年連続（2024・2025年）</span>
               </div>
             </div>
           </div>
         </section>
       </Reveal>
 
-      {/* ===== チーム・スローガンセクション ===== */}
+      {/* ===== チーム画像＋スローガンオーバーレイセクション ===== */}
       <Reveal>
-        <section style={{ backgroundColor: C.bgWhite, borderBottom: `1px solid ${C.border}` }}>
-          {/* チーム画像 */}
-          <div style={{ backgroundColor: C.bg }}>
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/kanoe-team_34dfcc30.jpeg"
-              alt="株式会社カノエ チーム"
-              className="w-full object-cover"
-              style={{ maxHeight: "420px", objectPosition: "center top" }}
-            />
-          </div>
-          {/* スローガン */}
-          <div className="container py-12 md:py-16">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+        <section style={{ backgroundColor: C.bgWhite, borderBottom: `1px solid ${C.border}`, position: "relative", overflow: "hidden" }}>
+          {/* 画像 */}
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/kanoe-team_34dfcc30.jpeg"
+            alt="株式会社カノエ チーム"
+            className="w-full object-cover block"
+            style={{ maxHeight: "420px", objectPosition: "center top" }}
+          />
+          {/* 画像上部にグラデーションオーバーレイ */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: "55%",
+              background: "linear-gradient(to bottom, rgba(248,248,247,0.92) 0%, rgba(248,248,247,0.7) 50%, rgba(248,248,247,0) 100%)",
+              pointerEvents: "none",
+            }}
+          />
+          {/* スローガン（画像上部に重ねる） */}
+          <div
+            className="container"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "100%",
+              paddingTop: "2rem",
+            }}
+          >
+            <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
               <div className="flex-1">
-                <p className="text-xs tracking-[0.15em] uppercase mb-3" style={{ color: C.textLight }}>Slogan</p>
+                <p className="text-xs tracking-[0.15em] uppercase mb-2 font-medium" style={{ color: C.navyLight }}>Slogan</p>
                 <p
-                  className="text-xl md:text-2xl font-bold leading-relaxed"
-                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif" }}
+                  className="text-lg md:text-2xl font-bold leading-snug"
+                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif", textShadow: "0 1px 4px rgba(248,248,247,0.8)" }}
                 >
                   おそうじで<br />キレイで豊かなくらしを
                 </p>
               </div>
-              <div style={{ width: "1px", minHeight: "4rem", backgroundColor: C.border }} className="hidden md:block self-stretch" />
+              <div style={{ width: "1px", height: "4rem", backgroundColor: "rgba(30,58,95,0.2)" }} className="hidden md:block mt-5" />
               <div className="flex-1">
-                <p className="text-xs tracking-[0.15em] uppercase mb-3" style={{ color: C.textLight }}>Philosophy</p>
+                <p className="text-xs tracking-[0.15em] uppercase mb-2 font-medium" style={{ color: C.navyLight }}>Philosophy</p>
                 <p
-                  className="text-xl md:text-2xl font-bold leading-relaxed"
-                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif" }}
+                  className="text-lg md:text-2xl font-bold leading-snug"
+                  style={{ color: C.navy, fontFamily: "'Noto Sans JP', sans-serif", textShadow: "0 1px 4px rgba(248,248,247,0.8)" }}
                 >
                   スタッフが明るいお店は<br />良いお店
                 </p>
