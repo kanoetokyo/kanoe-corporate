@@ -470,25 +470,30 @@ export default function Temoto() {
                   </p>
                 </div>
               </div>
-              {/* Bio placeholder */}
+              {/* Bio */}
               <div>
                 <div style={{ borderLeft: `2px solid ${C.gold}`, paddingLeft: 28 }}>
                   <h3 style={{ fontSize: 22, fontWeight: 700, color: C.darkNavy, marginBottom: 4 }}>
-                    （代表者名）
+                    勅使河原 将（テシガハラ ショウ）
                   </h3>
                   <p style={{ fontSize: 13, color: C.gold, letterSpacing: "0.1em", marginBottom: 24 }}>
-                    ブルーカラー軍師 代表 / 株式会社カノエ 代表取締役
+                    ブルーカラー軍師 主宰 / 株式会社カノエ 代表取締役
                   </p>
-                  <div style={{ backgroundColor: "#f5f5f5", padding: "24px", marginBottom: 24 }}>
-                    <p style={{ fontSize: 13, color: "#888", lineHeight: 1.8, textAlign: "center" }}>
-                      ※ 代表者の経歴・プロフィール文は後ほど追加予定です。<br />
-                      写真・テキストをお送りいただければすぐに更新します。
-                    </p>
-                  </div>
+                  <p style={{ fontSize: 14, color: "#444", lineHeight: 1.9, marginBottom: 24 }}>
+                    福岡県北九州市出身、37歳。同志社大学文学部英文学科卒業後、ニトリに新卒入社。店舗運営・新卒採用・海外事業を経験した後、JETROの南アフリカ駐在、航空系スタートアップのハワイ事業担当を経て、31歳で脱サラ。
+                    2019年8月、おそうじ本舗大井町店を個人事業主として開業。2020年に株式会社カノエとして法人化。現在は東京・神奈川・大阪で7店舗を展開し、従業員20名超・年商1億円を突破。
+                    <br /><br />
+                    「ホワイトカラーの経営スキル×ブルーカラーの現場力」を掛け合わせ、一人親方から組織化・拡大を実現してきた経験をもとに、同じ課題を抱えるブルーカラー経営者の軍師として伴走するサービスを立ち上げる。
+                  </p>
                   <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                    {["経歴・実績（後ほど追加）", "資格・認定（後ほど追加）", "メディア掲載・登壇実績（後ほど追加）"].map((item, i) => (
-                      <div key={i} style={{ padding: "12px 16px", backgroundColor: C.offWhite, borderLeft: `3px solid #ddd`, opacity: 0.6 }}>
-                        <p style={{ fontSize: 13, color: "#999" }}>{item}</p>
+                    {[
+                      { label: "キャリア", value: "ニトリ（店舗・採用・海外事業）→ JETRO南アフリカ駐在 → 航空系スタートアップ（ハワイ事業）→ 独立開業" },
+                      { label: "実績", value: "おそうじ本舗7店舗展開 / 従業員20名超 / 年商1億円突破 / テレビ朝日グッド！モーニング・ZIP・ヒルナンデス出演" },
+                      { label: "趣味", value: "トライアスロン（マレーシアでIronmanロング完走）・ボディメイク・大掃除と模様替え" },
+                    ].map((item, i) => (
+                      <div key={i} style={{ padding: "12px 16px", backgroundColor: C.offWhite, borderLeft: `3px solid ${C.gold}` }}>
+                        <p style={{ fontSize: 11, fontWeight: 700, color: C.gold, letterSpacing: "0.1em", marginBottom: 4 }}>{item.label}</p>
+                        <p style={{ fontSize: 13, color: "#555", lineHeight: 1.7 }}>{item.value}</p>
                       </div>
                     ))}
                   </div>
