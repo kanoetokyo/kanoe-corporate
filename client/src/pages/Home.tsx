@@ -231,12 +231,15 @@ function ConsultingSection() {
 
             {/* タイトル + リード文（常時表示） */}
             <h2
-              className="text-2xl md:text-4xl font-bold leading-tight mb-5"
-              style={{ color: "#ffffff", fontFamily: "'Noto Sans JP', sans-serif" }}
+              className="text-2xl md:text-4xl font-bold leading-tight mb-3"
+              style={{ color: "#ffffff", fontFamily: "'Noto Sans JP', sans-serif", letterSpacing: "0.08em" }}
             >
-              <span style={{ color: "#f5d67a" }}>ブルーカラー経営参謀</span>
+              <span style={{ color: "#f5d67a" }}>TEMOTO</span>
             </h2>
-            <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <p className="text-sm md:text-base font-medium mb-5" style={{ color: "rgba(255,255,255,0.85)" }}>
+              現場の手元ではなく、経営の手元（TEMOTO）。<br />ブルーカラー経営を支えるプロのコンサルティングサービス
+            </p>
+            <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
               ブルーカラーの職種を専門に、組織作り・営業強化・業務フローの構築・DXまで、一人親方から組織化を目指す方、または組織化していてもDXが進んでいない会社を一気通貫で支援します。
             </p>
 
