@@ -461,9 +461,9 @@ export default function Temoto() {
               {/* Photo */}
               <div>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/profile-teshigahara3_164381b5.jpg"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/profile-teshigahara4_41bedba0.jpg"
                   alt="勅使河原 将"
-                  style={{ width: "100%", aspectRatio: "3/4", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                  style={{ width: "100%", aspectRatio: "3/4", objectFit: "cover", objectPosition: "center center", display: "block" }}
                 />
               </div>
               {/* Bio */}
