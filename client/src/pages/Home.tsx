@@ -316,19 +316,17 @@ function ConsultingSection() {
                   style={{ border: "1px solid rgba(245,214,122,0.25)", backgroundColor: "rgba(245,214,122,0.05)" }}
                 >
                   <div className="flex-1">
-                    <p className="text-sm font-bold mb-0.5" style={{ color: "#f5d67a" }}>詳細ページは構築中</p>
-                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>気になる方は、まずはお気軽にお問い合わせください。</p>
+                    <p className="text-sm font-bold mb-0.5" style={{ color: "#f5d67a" }}>TEMOTOの詳細はこちら</p>
+                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>ブルーカラー経営専門のコンサルティングサービスページへ</p>
                   </div>
                   <a
-                    href="https://lin.ee/FyWcNMb"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/temoto"
                     className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition-all duration-200 flex-shrink-0"
                     style={{ backgroundColor: "#f5d67a", color: "#1a1a19" }}
                     onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"}
                     onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
                   >
-                    LINEでお問い合わせ
+                    TEMOTOを見る
                     <ExternalIcon />
                   </a>
                 </div>
