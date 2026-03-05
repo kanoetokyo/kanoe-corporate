@@ -1,9 +1,10 @@
 /**
- * TEMOTO Landing Page
+ * ブルーカラー軍師 Landing Page
  * Design: Neo-Minimalism × Craftsman Sincerity
  * Colors: Navy #1e3a5f / Off-white #f8f8f7 / Gold #c9a84c / Dark Navy #0f2540
  * Font: Noto Sans JP
  * Layout: Left-aligned, thin borders, numbered lists
+ * Concept: 大将（一人親方）を戦略的に支える軍師・経営参謀
  */
 
 import { useState, useEffect, useRef } from "react";
@@ -54,18 +55,18 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const problems = [
-  { num: "01", title: "雇用したいけど、一歩が踏み出せない", desc: "採用にかかるコストや手間、失敗したときのリスクを考えると、なかなか動けない。" },
+  { num: "01", title: "雇用したいけど、一歩が踏み出せない", desc: "採用にかかるコストや手間、失敗したときのリスクを考えると、なかなか動けない。大将一人で戦い続けるのにも限界がある。" },
   { num: "02", title: "採用しても辞められる・独立される繰り返し", desc: "せっかく育てた人材が辞めていく。独立されて競合になることも。雇用に良い経験がない。" },
-  { num: "03", title: "現場は回っているが、会社が成長しない", desc: "組織化はできたが現状維持から抜け出せない。売上が頭打ちで次の一手が見えない。" },
-  { num: "04", title: "一人親方から経営者になりたいが何から始めればいい？", desc: "技術はある。でも経営のことは誰も教えてくれなかった。マインドの切り替え方がわからない。" },
-  { num: "05", title: "現場仕事と経営の両立ができていない", desc: "自分が現場に出ないと回らない。経営に集中できる時間が作れない。" },
+  { num: "03", title: "現場は回っているが、会社が成長しない", desc: "組織化はできたが現状維持から抜け出せない。売上が頭打ちで次の戦略が見えない。" },
+  { num: "04", title: "一人親方から経営者になりたいが何から始めればいい？", desc: "技術という武器はある。でも経営という戦略は誰も教えてくれなかった。マインドの切り替え方がわからない。" },
+  { num: "05", title: "現場仕事と経営の両立ができていない", desc: "自分が現場に出ないと回らない。大将が前線に出続けていては、組織は大きくなれない。" },
 ];
 
 const reasons = [
-  { num: "01", title: "現場叩き上げのリアルな経験", desc: "机上の理論ではなく、実際にブルーカラーの現場で積み上げた経験をもとにアドバイスします。" },
-  { num: "02", title: "ブルーカラー専門に特化", desc: "建設・清掃・塗装など、ブルーカラー業種特有の課題と文化を深く理解しています。" },
-  { num: "03", title: "オンラインサロンで継続的にサポート", desc: "単発の相談ではなく、定期的な発信と交流で、時間をかけてマインドを変えていきます。" },
-  { num: "04", title: "一人親方から組織化まで一気通貫", desc: "雇用の第一歩から、組織の拡大・DX推進まで、成長ステージに合わせて伴走します。" },
+  { num: "01", title: "現場叩き上げのリアルな経験", desc: "机上の兵法ではなく、実際にブルーカラーの現場で積み上げた経験をもとに戦略を立てます。" },
+  { num: "02", title: "ブルーカラー専門に特化", desc: "建設・清掃・塗装など、ブルーカラー業種特有の課題と文化を深く理解した軍師です。" },
+  { num: "03", title: "オンラインサロンで継続的に伴走", desc: "単発の作戦会議ではなく、定期的な発信と交流で、時間をかけてマインドを変えていきます。" },
+  { num: "04", title: "一人親方から組織化まで一気通貫", desc: "雇用の第一歩から、組織の拡大・DX推進まで、成長ステージに合わせて戦略を共に描きます。" },
 ];
 
 export default function Temoto() {
@@ -75,7 +76,7 @@ export default function Temoto() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    document.title = "TEMOTO｜ブルーカラー経営を支えるプロのコンサルティングサービス";
+    document.title = "ブルーカラー軍師｜ブルーカラー経営者の経営参謀・戦略コンサルティング";
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -93,7 +94,7 @@ export default function Temoto() {
   };
 
   const navLinks = [
-    { label: "TEMOTOとは", id: "about" },
+    { label: "軍師とは", id: "about" },
     { label: "こんな方へ", id: "problems" },
     { label: "選ばれる理由", id: "reasons" },
     { label: "料金", id: "pricing" },
@@ -118,7 +119,7 @@ export default function Temoto() {
       >
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
           <button onClick={() => scrollTo("hero")} style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}>
-            <span style={{ fontSize: 22, fontWeight: 700, letterSpacing: "0.12em", color: C.gold }}>TEMOTO</span>
+            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.06em", color: C.gold }}>ブルーカラー軍師</span>
           </button>
 
           {/* Desktop nav */}
@@ -197,20 +198,20 @@ export default function Temoto() {
       >
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(10,25,45,0.72)" }} />
         <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", padding: "0 24px", paddingTop: 80 }}>
-          <div style={{ maxWidth: 680 }}>
+          <div style={{ maxWidth: 700 }}>
             <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, marginBottom: 20, textTransform: "uppercase" }}>
-              Blue-collar Consulting Service
+              Blue-collar Strategic Consulting
             </p>
-            <h1 style={{ fontSize: "clamp(56px, 10vw, 96px)", fontWeight: 700, color: "#fff", letterSpacing: "0.1em", lineHeight: 1, marginBottom: 24 }}>
-              TEMOTO
+            <h1 style={{ fontSize: "clamp(36px, 6vw, 72px)", fontWeight: 700, color: "#fff", letterSpacing: "0.06em", lineHeight: 1.2, marginBottom: 20 }}>
+              ブルーカラー軍師
             </h1>
             <div style={{ width: 48, height: 2, backgroundColor: C.gold, marginBottom: 28 }} />
-            <p style={{ fontSize: "clamp(16px, 2.5vw, 20px)", color: C.textLight, lineHeight: 1.7, marginBottom: 12, fontWeight: 500 }}>
-              現場の手元ではなく、経営の手元へ。
+            <p style={{ fontSize: "clamp(15px, 2.2vw, 19px)", color: C.textLight, lineHeight: 1.7, marginBottom: 12, fontWeight: 500 }}>
+              大将（一人親方）の隣に、軍師を。
             </p>
-            <p style={{ fontSize: "clamp(13px, 1.8vw, 16px)", color: C.textMuted, lineHeight: 1.8, marginBottom: 48, maxWidth: 520 }}>
-              ブルーカラー専門の現場叩き上げプロコンサルティング。<br />
-              一人親方から経営者へ。あなたの経営の「手元」になります。
+            <p style={{ fontSize: "clamp(13px, 1.6vw, 15px)", color: C.textMuted, lineHeight: 1.9, marginBottom: 48, maxWidth: 560 }}>
+              現場で圧倒的な力を持つブルーカラーの大将が、経営という戦場でも勝ち続けるために。<br />
+              現場叩き上げの経営参謀が、あなたの会社の軍師として戦略を共に描きます。
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <a
@@ -247,25 +248,25 @@ export default function Temoto() {
       <section id="about" style={{ padding: "96px 24px", backgroundColor: C.offWhite }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>About TEMOTO</p>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>About</p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }} className="grid-cols-1 md:grid-cols-2">
             <Reveal delay={100}>
-              <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, color: C.darkNavy, lineHeight: 1.4, marginBottom: 0 }}>
-                「手元」とは、<br />
-                <span style={{ color: C.gold }}>経営者の右腕</span>のこと。
+              <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", fontWeight: 700, color: C.darkNavy, lineHeight: 1.5, marginBottom: 0 }}>
+                「軍師」とは、<br />
+                <span style={{ color: C.gold }}>大将を勝たせるための<br />戦略家</span>のこと。
               </h2>
             </Reveal>
             <Reveal delay={200}>
               <div style={{ borderLeft: `2px solid ${C.gold}`, paddingLeft: 28 }}>
                 <p style={{ fontSize: 15, lineHeight: 1.9, color: "#444", marginBottom: 20 }}>
-                  建設・清掃・塗装などのブルーカラー業種では、技術を持った職人が一人親方として独立するケースが多くあります。しかし、現場仕事と経営は全く別のスキルセット。「雇用したいけど踏み出せない」「採用しても辞められる」という壁にぶつかる方が後を絶ちません。
+                  戦国時代、武将（大将）の隣には必ず軍師がいました。現場で圧倒的な力を持つ大将が、戦略という視点を持つ軍師と組むことで、はじめて天下を取ることができた。
                 </p>
                 <p style={{ fontSize: 15, lineHeight: 1.9, color: "#444", marginBottom: 20 }}>
-                  TEMOTOは、現場叩き上げのコンサルタントが、ブルーカラー経営者の「手元（右腕）」として伴走するサービスです。オンラインサロン「脱一人親方塾」を通じて、定期的な発信と交流で、時間をかけてマインドを変えていきます。
+                  現代のブルーカラー経営も同じです。建設・清掃・塗装などの現場で圧倒的な技術と信頼を持つ一人親方（大将）が、経営という戦場でも勝ち続けるためには、戦略を共に描く軍師が必要です。
                 </p>
                 <p style={{ fontSize: 15, lineHeight: 1.9, color: "#444" }}>
-                  一人親方から組織化を目指す方も、すでに組織化しているが成長が止まっている方も、まずはTEMOTOに相談してください。
+                  ブルーカラー軍師は、現場叩き上げの経営参謀として、あなたの会社の軍師になります。オンラインサロン「脱一人親方塾」を通じて、一人親方から経営者へのマインドチェンジを時間をかけてサポートします。
                 </p>
               </div>
             </Reveal>
@@ -288,8 +289,8 @@ export default function Temoto() {
         <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
             <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Common Problems</p>
-            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 38px)", fontWeight: 700, color: "#fff", marginBottom: 56 }}>
-              こんな悩みはありませんか？
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: "#fff", marginBottom: 56 }}>
+              こんな悩みを抱えていませんか？
             </h2>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 1, backgroundColor: "rgba(255,255,255,0.08)" }}>
@@ -310,8 +311,8 @@ export default function Temoto() {
           <Reveal delay={500}>
             <div style={{ marginTop: 48, padding: "24px 28px", borderLeft: `3px solid ${C.gold}`, backgroundColor: "rgba(201,168,76,0.08)" }}>
               <p style={{ fontSize: 15, color: C.textLight, lineHeight: 1.8 }}>
-                その悩み、一人で抱え込まないでください。<br />
-                <strong style={{ color: C.gold }}>TEMOTOはブルーカラー経営者の「駆け込み寺」です。</strong>
+                大将一人で戦い続けることに、もう限界を感じていませんか？<br />
+                <strong style={{ color: C.gold }}>ブルーカラー軍師は、あなたの経営の「駆け込み寺」です。</strong>
               </p>
             </div>
           </Reveal>
@@ -323,8 +324,8 @@ export default function Temoto() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
             <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Our Service</p>
-            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 38px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
-              TEMOTOのサービス
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
+              ブルーカラー軍師のサービス
             </h2>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, backgroundColor: "#eee" }} className="grid-cols-1 md:grid-cols-2">
@@ -332,15 +333,15 @@ export default function Temoto() {
             <Reveal delay={100}>
               <div style={{ backgroundColor: C.darkNavy, padding: "48px 40px" }}>
                 <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Main Service</p>
-                <h3 style={{ fontSize: "clamp(20px, 2.5vw, 28px)", fontWeight: 700, color: "#fff", marginBottom: 20, lineHeight: 1.4 }}>
+                <h3 style={{ fontSize: "clamp(18px, 2.2vw, 26px)", fontWeight: 700, color: "#fff", marginBottom: 20, lineHeight: 1.4 }}>
                   脱一人親方塾
                 </h3>
                 <div style={{ width: 32, height: 1, backgroundColor: C.gold, marginBottom: 24 }} />
                 <p style={{ fontSize: 14, color: C.textMuted, lineHeight: 1.9, marginBottom: 24 }}>
-                  オンラインサロン形式で、定期的な発信・動画・コミュニティ交流を通じて、一人親方から経営者へのマインドチェンジを時間をかけてサポートします。
+                  オンラインサロン形式で、定期的な発信・動画・コミュニティ交流を通じて、一人親方（大将）から経営者へのマインドチェンジを時間をかけてサポートします。すでに組織化している会社の「成長停滞の打破」にも有効です。
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {["毎月の経営コンテンツ配信", "メンバー限定コミュニティ", "個別相談（LINEサポート）", "組織化ロードマップの提供"].map((item, i) => (
+                  {["毎月の経営戦略コンテンツ配信", "メンバー限定コミュニティ", "個別相談（LINEサポート）", "組織化ロードマップの提供"].map((item, i) => (
                     <li key={i} style={{ fontSize: 13, color: C.textLight, padding: "8px 0", borderBottom: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", gap: 10 }}>
                       <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: C.gold, flexShrink: 0 }} />
                       {item}
@@ -353,15 +354,15 @@ export default function Temoto() {
             <Reveal delay={200}>
               <div style={{ backgroundColor: C.offWhite, padding: "48px 40px" }}>
                 <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.navy, textTransform: "uppercase", marginBottom: 16 }}>For All Stages</p>
-                <h3 style={{ fontSize: "clamp(20px, 2.5vw, 28px)", fontWeight: 700, color: C.darkNavy, marginBottom: 20, lineHeight: 1.4 }}>
-                  こんな方に<br />おすすめです
+                <h3 style={{ fontSize: "clamp(18px, 2.2vw, 26px)", fontWeight: 700, color: C.darkNavy, marginBottom: 20, lineHeight: 1.4 }}>
+                  大将の成長ステージに<br />合わせて伴走します
                 </h3>
                 <div style={{ width: 32, height: 1, backgroundColor: C.navy, marginBottom: 24 }} />
                 <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {[
-                    { stage: "Stage 01", title: "一人親方", desc: "雇用の第一歩を踏み出したい。経営者マインドを身につけたい。" },
+                    { stage: "Stage 01", title: "一人親方（大将）", desc: "雇用の第一歩を踏み出したい。経営者マインドを身につけたい。" },
                     { stage: "Stage 02", title: "小規模組織（2〜10名）", desc: "採用・定着に悩んでいる。組織の仕組みを作りたい。" },
-                    { stage: "Stage 03", title: "中規模組織（10〜20名）", desc: "成長が止まっている。DXを進めたい。次の展開を考えたい。" },
+                    { stage: "Stage 03", title: "中規模組織（10〜20名）", desc: "成長が止まっている。DXを進めたい。次の戦略を考えたい。" },
                   ].map((s, i) => (
                     <div key={i} style={{ padding: "16px 20px", backgroundColor: "#fff", borderLeft: `3px solid ${C.navy}` }}>
                       <span style={{ fontSize: 10, letterSpacing: "0.18em", color: C.gold, textTransform: "uppercase" }}>{s.stage}</span>
@@ -380,9 +381,9 @@ export default function Temoto() {
       <section id="reasons" style={{ padding: "96px 24px", backgroundColor: C.offWhite }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Why TEMOTO</p>
-            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 38px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
-              TEMOTOが選ばれる理由
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Why Us</p>
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
+              ブルーカラー軍師が選ばれる理由
             </h2>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 32 }}>
@@ -404,7 +405,7 @@ export default function Temoto() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
             <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Pricing</p>
-            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 38px)", fontWeight: 700, color: "#fff", marginBottom: 56 }}>
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: "#fff", marginBottom: 56 }}>
               料金プラン
             </h2>
           </Reveal>
@@ -419,7 +420,7 @@ export default function Temoto() {
               </div>
               <p style={{ fontSize: 12, color: C.textMuted, marginBottom: 32 }}>初月無料・いつでも解約可能</p>
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px" }}>
-                {["毎月の経営コンテンツ・動画配信", "メンバー限定コミュニティへのアクセス", "LINEサポート（個別相談）", "組織化ロードマップの提供", "過去コンテンツのアーカイブ閲覧"].map((item, i) => (
+                {["毎月の経営戦略コンテンツ・動画配信", "メンバー限定コミュニティへのアクセス", "LINEサポート（個別相談）", "組織化ロードマップの提供", "過去コンテンツのアーカイブ閲覧"].map((item, i) => (
                   <li key={i} style={{ fontSize: 13, color: C.textLight, padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", gap: 10 }}>
                     <span style={{ color: C.gold, fontSize: 16 }}>✓</span>
                     {item}
@@ -451,8 +452,8 @@ export default function Temoto() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
             <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Profile</p>
-            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 38px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
-              代表者プロフィール
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
+              軍師プロフィール
             </h2>
           </Reveal>
           <Reveal delay={100}>
@@ -476,7 +477,7 @@ export default function Temoto() {
                     （代表者名）
                   </h3>
                   <p style={{ fontSize: 13, color: C.gold, letterSpacing: "0.1em", marginBottom: 24 }}>
-                    TEMOTO 代表 / 株式会社カノエ 代表取締役
+                    ブルーカラー軍師 代表 / 株式会社カノエ 代表取締役
                   </p>
                   <div style={{ backgroundColor: "#f5f5f5", padding: "24px", marginBottom: 24 }}>
                     <p style={{ fontSize: 13, color: "#888", lineHeight: 1.8, textAlign: "center" }}>
@@ -513,12 +514,12 @@ export default function Temoto() {
         <div style={{ position: "relative" }}>
           <Reveal>
             <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Get Started</p>
-            <h2 style={{ fontSize: "clamp(22px, 3.5vw, 36px)", fontWeight: 700, color: "#fff", marginBottom: 16, lineHeight: 1.5 }}>
-              まずは無料でLINE相談してみてください。
+            <h2 style={{ fontSize: "clamp(20px, 3.2vw, 34px)", fontWeight: 700, color: "#fff", marginBottom: 16, lineHeight: 1.6 }}>
+              大将の隣に、軍師を。<br />まずは無料でLINE相談してください。
             </h2>
             <p style={{ fontSize: 14, color: C.textMuted, marginBottom: 40, lineHeight: 1.8 }}>
-              相談は無料です。あなたの状況を聞かせてください。<br />
-              一緒に次の一手を考えましょう。
+              相談は無料です。あなたの現状と目標を聞かせてください。<br />
+              一緒に次の戦略を考えましょう。
             </p>
             <a
               href="https://lin.ee/FyWcNMb"
@@ -539,7 +540,7 @@ export default function Temoto() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
             <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Contact</p>
-            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 38px)", fontWeight: 700, color: C.darkNavy, marginBottom: 16 }}>
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: C.darkNavy, marginBottom: 16 }}>
               お問い合わせ
             </h2>
             <p style={{ fontSize: 14, color: "#666", marginBottom: 48, lineHeight: 1.8 }}>
@@ -631,8 +632,8 @@ export default function Temoto() {
       <footer style={{ backgroundColor: C.darkNavy, padding: "40px 24px", borderTop: `1px solid rgba(201,168,76,0.2)` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
           <div>
-            <span style={{ fontSize: 18, fontWeight: 700, letterSpacing: "0.12em", color: C.gold, display: "block", marginBottom: 4 }}>TEMOTO</span>
-            <p style={{ fontSize: 12, color: C.textMuted }}>ブルーカラー経営を支えるプロのコンサルティングサービス</p>
+            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.06em", color: C.gold, display: "block", marginBottom: 4 }}>ブルーカラー軍師</span>
+            <p style={{ fontSize: 12, color: C.textMuted }}>ブルーカラー経営者の経営参謀・戦略コンサルティングサービス</p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
             <p style={{ fontSize: 12, color: C.textMuted }}>運営：株式会社カノエ</p>

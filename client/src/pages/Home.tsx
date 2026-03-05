@@ -234,13 +234,13 @@ function ConsultingSection() {
               className="text-2xl md:text-4xl font-bold leading-tight mb-3"
               style={{ color: "#ffffff", fontFamily: "'Noto Sans JP', sans-serif", letterSpacing: "0.08em" }}
             >
-              <span style={{ color: "#f5d67a" }}>TEMOTO</span>
+              <span style={{ color: "#f5d67a" }}>ブルーカラー軍師</span>
             </h2>
             <p className="text-sm md:text-base font-medium mb-5" style={{ color: "rgba(255,255,255,0.85)" }}>
-              現場の手元ではなく、経営の手元（TEMOTO）。<br />ブルーカラー経営を支えるプロのコンサルティングサービス
+              大将（一人親方）の隣に、軍師を。<br />ブルーカラー経営者の戦略参謀・コンサルティングサービス
             </p>
             <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-              ブルーカラーの職種を専門に、組織作り・営業強化・業務フローの構築・DXまで、一人親方から組織化を目指す方、または組織化していてもDXが進んでいない会社を一気通貫で支援します。
+              現場叩き上げの経営参謀が、ブルーカラーの大将（一人親方）を経営という戦場でも勝たせるために伴走します。一人親方から組織化・拡大まで、成長ステージに合わせて戦略を共に描きます。
             </p>
 
             {/* 展開トグルボタン */}
@@ -316,8 +316,8 @@ function ConsultingSection() {
                   style={{ border: "1px solid rgba(245,214,122,0.25)", backgroundColor: "rgba(245,214,122,0.05)" }}
                 >
                   <div className="flex-1">
-                    <p className="text-sm font-bold mb-0.5" style={{ color: "#f5d67a" }}>TEMOTOの詳細はこちら</p>
-                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>ブルーカラー経営専門のコンサルティングサービスページへ</p>
+                    <p className="text-sm font-bold mb-0.5" style={{ color: "#f5d67a" }}>ブルーカラー軍師の詳細はこちら</p>
+                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>大将を支える軍師・経営参謀サービスの専用ページへ</p>
                   </div>
                   <a
                     href="/temoto"
@@ -326,7 +326,7 @@ function ConsultingSection() {
                     onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"}
                     onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
                   >
-                    TEMOTOを見る
+                    ブルーカラー軍師を見る
                     <ExternalIcon />
                   </a>
                 </div>
