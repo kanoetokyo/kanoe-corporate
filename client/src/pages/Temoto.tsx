@@ -1,7 +1,7 @@
 /**
  * ブルーカラー軍師 Landing Page
  * Design: Neo-Minimalism × Craftsman Sincerity
- * Colors: Navy #1e3a5f / Off-white #f8f8f7 / Gold #c9a84c / Dark Navy #0f2540
+ * Colors: Navy #1e3a5f / Off-white #f8f8f7 / Gold #1e88e5 / Dark Navy #0f2540
  * Font: Noto Sans JP
  * Layout: Left-aligned, thin borders, numbered lists
  * Concept: 大将（一人親方）を戦略的に支える軍師・経営参謀
@@ -12,7 +12,7 @@ import { useState, useEffect, useRef } from "react";
 const C = {
   navy: "#1e3a5f",
   darkNavy: "#0f2540",
-  gold: "#c9a84c",
+  gold: "#1e88e5",
   offWhite: "#f8f8f7",
   text: "#1a1a19",
   textMuted: "rgba(255,255,255,0.65)",
@@ -102,7 +102,7 @@ export default function Temoto() {
   ];
 
   return (
-    <div style={{ fontFamily: "'Noto Sans JP', sans-serif", backgroundColor: C.offWhite, color: C.text }}>
+    <div style={{ fontFamily: "'Noto Sans JP', sans-serif", backgroundColor: "#f0f6ff", color: "#1a2a3a" }}>
       {/* ===== HEADER ===== */}
       <header
         style={{
@@ -113,13 +113,13 @@ export default function Temoto() {
           zIndex: 100,
           backgroundColor: scrolled ? "rgba(15,37,64,0.97)" : "transparent",
           backdropFilter: scrolled ? "blur(12px)" : "none",
-          borderBottom: scrolled ? `1px solid rgba(201,168,76,0.2)` : "none",
+          borderBottom: scrolled ? `1px solid rgba(33,150,243,0.2)` : "none",
           transition: "all 0.3s ease",
         }}
       >
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
           <button onClick={() => scrollTo("hero")} style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}>
-            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.06em", color: C.gold }}>ブルーカラー軍師</span>
+            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.06em", color: "#1e88e5" }}>ブルーカラー軍師</span>
           </button>
 
           {/* Desktop nav */}
@@ -129,7 +129,7 @@ export default function Temoto() {
                 key={l.id}
                 onClick={() => scrollTo(l.id)}
                 style={{ background: "none", border: "none", cursor: "pointer", fontSize: 13, color: "rgba(255,255,255,0.8)", letterSpacing: "0.06em", transition: "color 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.color = C.gold)}
+                onMouseEnter={e => (e.currentTarget.style.color = "#1e88e5")}
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
               >
                 {l.label}
@@ -139,7 +139,7 @@ export default function Temoto() {
               href="https://lin.ee/FyWcNMb"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontSize: 12, fontWeight: 600, padding: "8px 18px", backgroundColor: C.gold, color: "#fff", letterSpacing: "0.06em", textDecoration: "none", transition: "opacity 0.2s" }}
+              style={{ fontSize: 12, fontWeight: 600, padding: "8px 18px", backgroundColor: "#1e88e5", color: "#fff", letterSpacing: "0.06em", textDecoration: "none", transition: "opacity 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
               onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
             >
@@ -154,14 +154,14 @@ export default function Temoto() {
             className="md:hidden"
           >
             {[0, 1, 2].map(i => (
-              <span key={i} style={{ display: "block", width: 22, height: 1.5, backgroundColor: C.gold, transition: "all 0.3s" }} />
+              <span key={i} style={{ display: "block", width: 22, height: 1.5, backgroundColor: "#1e88e5", transition: "all 0.3s" }} />
             ))}
           </button>
         </div>
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div style={{ backgroundColor: C.darkNavy, borderTop: `1px solid rgba(201,168,76,0.2)`, padding: "16px 24px 24px" }}>
+          <div style={{ backgroundColor: "#0d3b8c", borderTop: `1px solid rgba(33,150,243,0.2)`, padding: "16px 24px 24px" }}>
             {navLinks.map(l => (
               <button
                 key={l.id}
@@ -175,7 +175,7 @@ export default function Temoto() {
               href="https://lin.ee/FyWcNMb"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "block", marginTop: 16, textAlign: "center", fontSize: 13, fontWeight: 600, padding: "12px", backgroundColor: C.gold, color: "#fff", textDecoration: "none", letterSpacing: "0.06em" }}
+              style={{ display: "block", marginTop: 16, textAlign: "center", fontSize: 13, fontWeight: 600, padding: "12px", backgroundColor: "#1e88e5", color: "#fff", textDecoration: "none", letterSpacing: "0.06em" }}
             >
               LINEで無料相談
             </a>
@@ -199,17 +199,17 @@ export default function Temoto() {
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(10,25,45,0.72)" }} />
         <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", padding: "0 24px", paddingTop: 80 }}>
           <div style={{ maxWidth: 700 }}>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, marginBottom: 20, textTransform: "uppercase" }}>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", marginBottom: 20, textTransform: "uppercase" }}>
               Blue-collar Strategic Consulting
             </p>
             <h1 style={{ fontSize: "clamp(36px, 6vw, 72px)", fontWeight: 700, color: "#fff", letterSpacing: "0.06em", lineHeight: 1.2, marginBottom: 20 }}>
               ブルーカラー軍師
             </h1>
-            <div style={{ width: 48, height: 2, backgroundColor: C.gold, marginBottom: 28 }} />
-            <p style={{ fontSize: "clamp(15px, 2.2vw, 19px)", color: C.textLight, lineHeight: 1.7, marginBottom: 12, fontWeight: 500 }}>
+            <div style={{ width: 48, height: 2, backgroundColor: "#1e88e5", marginBottom: 28 }} />
+            <p style={{ fontSize: "clamp(15px, 2.2vw, 19px)", color: "rgba(255,255,255,0.92)", lineHeight: 1.7, marginBottom: 12, fontWeight: 500 }}>
               大将（一人親方）の隣に、軍師を。
             </p>
-            <p style={{ fontSize: "clamp(13px, 1.6vw, 15px)", color: C.textMuted, lineHeight: 1.9, marginBottom: 48, maxWidth: 560 }}>
+            <p style={{ fontSize: "clamp(13px, 1.6vw, 15px)", color: "rgba(255,255,255,0.72)", lineHeight: 1.9, marginBottom: 48, maxWidth: 560 }}>
               現場で圧倒的な力を持つブルーカラーの大将が、経営という戦場でも勝ち続けるために。<br />
               現場叩き上げの経営参謀が、あなたの会社の軍師として戦略を共に描きます。
             </p>
@@ -218,7 +218,7 @@ export default function Temoto() {
                 href="https://lin.ee/FyWcNMb"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 600, padding: "14px 32px", backgroundColor: C.gold, color: "#fff", textDecoration: "none", letterSpacing: "0.06em", transition: "opacity 0.2s" }}
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 600, padding: "14px 32px", backgroundColor: "#1e88e5", color: "#fff", textDecoration: "none", letterSpacing: "0.06em", transition: "opacity 0.2s" }}
                 onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
                 onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
               >
@@ -227,7 +227,7 @@ export default function Temoto() {
               <button
                 onClick={() => scrollTo("about")}
                 style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 500, padding: "14px 32px", backgroundColor: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", cursor: "pointer", letterSpacing: "0.06em", transition: "border-color 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = C.gold)}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = "#1e88e5")}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)")}
               >
                 詳しく見る
@@ -239,26 +239,26 @@ export default function Temoto() {
         <div style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.18em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase" }}>Scroll</span>
           <div style={{ width: 1, height: 40, backgroundColor: "rgba(255,255,255,0.2)", position: "relative", overflow: "hidden" }}>
-            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "40%", backgroundColor: C.gold, animation: "scrollLine 1.8s ease-in-out infinite" }} />
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "40%", backgroundColor: "#1e88e5", animation: "scrollLine 1.8s ease-in-out infinite" }} />
           </div>
         </div>
       </section>
 
       {/* ===== ABOUT ===== */}
-      <section id="about" style={{ padding: "96px 24px", backgroundColor: C.offWhite }}>
+      <section id="about" style={{ padding: "96px 24px", backgroundColor: "#f0f6ff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>About</p>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>About</p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }} className="grid-cols-1 md:grid-cols-2">
             <Reveal delay={100}>
-              <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", fontWeight: 700, color: C.darkNavy, lineHeight: 1.5, marginBottom: 0 }}>
+              <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", fontWeight: 700, color: "#0d3b8c", lineHeight: 1.5, marginBottom: 0 }}>
                 「軍師」とは、<br />
-                <span style={{ color: C.gold }}>大将を勝たせるための<br />戦略家</span>のこと。
+                <span style={{ color: "#1e88e5" }}>大将を勝たせるための<br />戦略家</span>のこと。
               </h2>
             </Reveal>
             <Reveal delay={200}>
-              <div style={{ borderLeft: `2px solid ${C.gold}`, paddingLeft: 28 }}>
+              <div style={{ borderLeft: `3px solid #1e88e5`, paddingLeft: 28 }}>
                 <p style={{ fontSize: 15, lineHeight: 1.9, color: "#444", marginBottom: 20 }}>
                   戦国時代、武将（大将）の隣には必ず軍師がいました。現場で圧倒的な力を持つ大将が、戦略という視点を持つ軍師と組むことで、はじめて天下を取ることができた。
                 </p>
@@ -288,7 +288,7 @@ export default function Temoto() {
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(10,25,45,0.88)" }} />
         <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Common Problems</p>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>Common Problems</p>
             <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: "#fff", marginBottom: 56 }}>
               こんな悩みを抱えていませんか？
             </h2>
@@ -298,21 +298,21 @@ export default function Temoto() {
               <Reveal key={p.num} delay={i * 80}>
                 <div
                   style={{ padding: "32px 28px", backgroundColor: "rgba(15,37,64,0.6)", backdropFilter: "blur(4px)", height: "100%" }}
-                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "rgba(201,168,76,0.12)")}
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "rgba(33,150,243,0.15)")}
                   onMouseLeave={e => (e.currentTarget.style.backgroundColor = "rgba(15,37,64,0.6)")}
                 >
-                  <span style={{ fontSize: 11, letterSpacing: "0.18em", color: C.gold, display: "block", marginBottom: 12 }}>{p.num}</span>
+                  <span style={{ fontSize: 11, letterSpacing: "0.18em", color: "#1e88e5", display: "block", marginBottom: 12 }}>{p.num}</span>
                   <h3 style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 10, lineHeight: 1.5 }}>{p.title}</h3>
-                  <p style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.8 }}>{p.desc}</p>
+                  <p style={{ fontSize: 13, color: "rgba(255,255,255,0.72)", lineHeight: 1.8 }}>{p.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
           <Reveal delay={500}>
-            <div style={{ marginTop: 48, padding: "24px 28px", borderLeft: `3px solid ${C.gold}`, backgroundColor: "rgba(201,168,76,0.08)" }}>
-              <p style={{ fontSize: 15, color: C.textLight, lineHeight: 1.8 }}>
+            <div style={{ marginTop: 48, padding: "24px 28px", borderLeft: `3px solid ${"#1e88e5"}`, backgroundColor: "rgba(33,150,243,0.10)" }}>
+              <p style={{ fontSize: 15, color: "rgba(255,255,255,0.92)", lineHeight: 1.8 }}>
                 大将一人で戦い続けることに、もう限界を感じていませんか？<br />
-                <strong style={{ color: C.gold }}>ブルーカラー軍師は、あなたの経営の「駆け込み寺」です。</strong>
+                <strong style={{ color: "#1e88e5" }}>ブルーカラー軍師は、あなたの経営の「駆け込み寺」です。</strong>
               </p>
             </div>
           </Reveal>
@@ -323,27 +323,27 @@ export default function Temoto() {
       <section style={{ padding: "96px 24px", backgroundColor: "#fff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Our Service</p>
-            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>Our Service</p>
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: "#0d3b8c", marginBottom: 56 }}>
               ブルーカラー軍師のサービス
             </h2>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, backgroundColor: "#eee" }} className="grid-cols-1 md:grid-cols-2">
             {/* Service 1 */}
             <Reveal delay={100}>
-              <div style={{ backgroundColor: C.darkNavy, padding: "48px 40px" }}>
-                <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Main Service</p>
+              <div style={{ backgroundColor: "#0d3b8c", padding: "48px 40px" }}>
+                <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>Main Service</p>
                 <h3 style={{ fontSize: "clamp(18px, 2.2vw, 26px)", fontWeight: 700, color: "#fff", marginBottom: 20, lineHeight: 1.4 }}>
                   脱一人親方塾
                 </h3>
-                <div style={{ width: 32, height: 1, backgroundColor: C.gold, marginBottom: 24 }} />
-                <p style={{ fontSize: 14, color: C.textMuted, lineHeight: 1.9, marginBottom: 24 }}>
+                <div style={{ width: 32, height: 1, backgroundColor: "#1e88e5", marginBottom: 24 }} />
+                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.72)", lineHeight: 1.9, marginBottom: 24 }}>
                   オンラインサロン形式で、定期的な発信・動画・コミュニティ交流を通じて、一人親方（大将）から経営者へのマインドチェンジを時間をかけてサポートします。すでに組織化している会社の「成長停滞の打破」にも有効です。
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["毎月の経営戦略コンテンツ配信", "メンバー限定コミュニティ", "個別相談（LINEサポート）", "組織化ロードマップの提供"].map((item, i) => (
-                    <li key={i} style={{ fontSize: 13, color: C.textLight, padding: "8px 0", borderBottom: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", gap: 10 }}>
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: C.gold, flexShrink: 0 }} />
+                    <li key={i} style={{ fontSize: 13, color: "rgba(255,255,255,0.92)", padding: "8px 0", borderBottom: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", gap: 10 }}>
+                      <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#1e88e5", flexShrink: 0 }} />
                       {item}
                     </li>
                   ))}
@@ -352,21 +352,21 @@ export default function Temoto() {
             </Reveal>
             {/* Service 2 */}
             <Reveal delay={200}>
-              <div style={{ backgroundColor: C.offWhite, padding: "48px 40px" }}>
-                <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.navy, textTransform: "uppercase", marginBottom: 16 }}>For All Stages</p>
-                <h3 style={{ fontSize: "clamp(18px, 2.2vw, 26px)", fontWeight: 700, color: C.darkNavy, marginBottom: 20, lineHeight: 1.4 }}>
+              <div style={{ backgroundColor: "#f0f6ff", padding: "48px 40px" }}>
+                <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1565c0", textTransform: "uppercase", marginBottom: 16 }}>For All Stages</p>
+                <h3 style={{ fontSize: "clamp(18px, 2.2vw, 26px)", fontWeight: 700, color: "#0d3b8c", marginBottom: 20, lineHeight: 1.4 }}>
                   大将の成長ステージに<br />合わせて伴走します
                 </h3>
-                <div style={{ width: 32, height: 1, backgroundColor: C.navy, marginBottom: 24 }} />
+                <div style={{ width: 32, height: 1, backgroundColor: "#1565c0", marginBottom: 24 }} />
                 <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {[
                     { stage: "Stage 01", title: "一人親方（大将）", desc: "雇用の第一歩を踏み出したい。経営者マインドを身につけたい。" },
                     { stage: "Stage 02", title: "小規模組織（2〜10名）", desc: "採用・定着に悩んでいる。組織の仕組みを作りたい。" },
                     { stage: "Stage 03", title: "中規模組織（10〜20名）", desc: "成長が止まっている。DXを進めたい。次の戦略を考えたい。" },
                   ].map((s, i) => (
-                    <div key={i} style={{ padding: "16px 20px", backgroundColor: "#fff", borderLeft: `3px solid ${C.navy}` }}>
-                      <span style={{ fontSize: 10, letterSpacing: "0.18em", color: C.gold, textTransform: "uppercase" }}>{s.stage}</span>
-                      <p style={{ fontSize: 14, fontWeight: 600, color: C.darkNavy, margin: "4px 0" }}>{s.title}</p>
+                    <div key={i} style={{ padding: "16px 20px", backgroundColor: "#fff", borderLeft: `3px solid ${"#1565c0"}` }}>
+                      <span style={{ fontSize: 10, letterSpacing: "0.18em", color: "#1e88e5", textTransform: "uppercase" }}>{s.stage}</span>
+                      <p style={{ fontSize: 14, fontWeight: 600, color: "#0d3b8c", margin: "4px 0" }}>{s.title}</p>
                       <p style={{ fontSize: 13, color: "#666", lineHeight: 1.7 }}>{s.desc}</p>
                     </div>
                   ))}
@@ -378,20 +378,20 @@ export default function Temoto() {
       </section>
 
       {/* ===== REASONS ===== */}
-      <section id="reasons" style={{ padding: "96px 24px", backgroundColor: C.offWhite }}>
+      <section id="reasons" style={{ padding: "96px 24px", backgroundColor: "#f0f6ff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Why Us</p>
-            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>Why Us</p>
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: "#0d3b8c", marginBottom: 56 }}>
               ブルーカラー軍師が選ばれる理由
             </h2>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 32 }}>
             {reasons.map((r, i) => (
               <Reveal key={r.num} delay={i * 100}>
-                <div style={{ borderTop: `2px solid ${C.gold}`, paddingTop: 24 }}>
-                  <span style={{ fontSize: 32, fontWeight: 700, color: "rgba(201,168,76,0.2)", letterSpacing: "0.05em", display: "block", marginBottom: 8 }}>{r.num}</span>
-                  <h3 style={{ fontSize: 15, fontWeight: 700, color: C.darkNavy, marginBottom: 12, lineHeight: 1.5 }}>{r.title}</h3>
+                <div style={{ borderTop: `2px solid ${"#1e88e5"}`, paddingTop: 24 }}>
+                  <span style={{ fontSize: 32, fontWeight: 700, color: "rgba(33,150,243,0.2)", letterSpacing: "0.05em", display: "block", marginBottom: 8 }}>{r.num}</span>
+                  <h3 style={{ fontSize: 15, fontWeight: 700, color: "#0d3b8c", marginBottom: 12, lineHeight: 1.5 }}>{r.title}</h3>
                   <p style={{ fontSize: 13, color: "#555", lineHeight: 1.8 }}>{r.desc}</p>
                 </div>
               </Reveal>
@@ -401,28 +401,28 @@ export default function Temoto() {
       </section>
 
       {/* ===== PRICING ===== */}
-      <section id="pricing" style={{ padding: "96px 24px", backgroundColor: C.darkNavy }}>
+      <section id="pricing" style={{ padding: "96px 24px", backgroundColor: "#0d3b8c" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Pricing</p>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>Pricing</p>
             <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: "#fff", marginBottom: 56 }}>
               料金プラン
             </h2>
           </Reveal>
           <Reveal delay={150}>
             <div style={{ maxWidth: 520, border: `1px solid rgba(201,168,76,0.4)`, padding: "48px 40px", position: "relative" }}>
-              <div style={{ position: "absolute", top: -1, left: 32, right: 32, height: 3, backgroundColor: C.gold }} />
-              <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 12 }}>脱一人親方塾</p>
+              <div style={{ position: "absolute", top: -1, left: 32, right: 32, height: 3, backgroundColor: "#1e88e5" }} />
+              <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 12 }}>脱一人親方塾</p>
               <h3 style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 24 }}>オンラインサロン会員プラン</h3>
               <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 8 }}>
-                <span style={{ fontSize: 48, fontWeight: 700, color: C.gold }}>¥5,500</span>
-                <span style={{ fontSize: 14, color: C.textMuted }}>/ 月（税込）</span>
+                <span style={{ fontSize: 48, fontWeight: 700, color: "#1e88e5" }}>¥5,500</span>
+                <span style={{ fontSize: 14, color: "rgba(255,255,255,0.72)" }}>/ 月（税込）</span>
               </div>
-              <p style={{ fontSize: 12, color: C.textMuted, marginBottom: 32 }}>初月無料・いつでも解約可能</p>
+              <p style={{ fontSize: 12, color: "rgba(255,255,255,0.72)", marginBottom: 32 }}>初月無料・いつでも解約可能</p>
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px" }}>
                 {["毎月の経営戦略コンテンツ・動画配信", "メンバー限定コミュニティへのアクセス", "LINEサポート（個別相談）", "組織化ロードマップの提供", "過去コンテンツのアーカイブ閲覧"].map((item, i) => (
-                  <li key={i} style={{ fontSize: 13, color: C.textLight, padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", gap: 10 }}>
-                    <span style={{ color: C.gold, fontSize: 16 }}>✓</span>
+                  <li key={i} style={{ fontSize: 13, color: "rgba(255,255,255,0.92)", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ color: "#1e88e5", fontSize: 16 }}>✓</span>
                     {item}
                   </li>
                 ))}
@@ -431,7 +431,7 @@ export default function Temoto() {
                 href="https://lin.ee/FyWcNMb"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "block", textAlign: "center", fontSize: 14, fontWeight: 600, padding: "14px 32px", backgroundColor: C.gold, color: "#fff", textDecoration: "none", letterSpacing: "0.06em", transition: "opacity 0.2s" }}
+                style={{ display: "block", textAlign: "center", fontSize: 14, fontWeight: 600, padding: "14px 32px", backgroundColor: "#1e88e5", color: "#fff", textDecoration: "none", letterSpacing: "0.06em", transition: "opacity 0.2s" }}
                 onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
                 onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
               >
@@ -440,7 +440,7 @@ export default function Temoto() {
             </div>
           </Reveal>
           <Reveal delay={250}>
-            <p style={{ fontSize: 13, color: C.textMuted, marginTop: 24 }}>
+            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.72)", marginTop: 24 }}>
               ※ 個別コンサルティング・スポット相談については、LINEまたはお問い合わせフォームよりご相談ください。
             </p>
           </Reveal>
@@ -451,8 +451,8 @@ export default function Temoto() {
       <section style={{ padding: "96px 24px", backgroundColor: "#fff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Profile</p>
-            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: C.darkNavy, marginBottom: 56 }}>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>Profile</p>
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: "#0d3b8c", marginBottom: 56 }}>
               軍師プロフィール
             </h2>
           </Reveal>
@@ -468,11 +468,11 @@ export default function Temoto() {
               </div>
               {/* Bio */}
               <div>
-                <div style={{ borderLeft: `2px solid ${C.gold}`, paddingLeft: 28 }}>
-                  <h3 style={{ fontSize: 22, fontWeight: 700, color: C.darkNavy, marginBottom: 4 }}>
+                <div style={{ borderLeft: `3px solid #1e88e5`, paddingLeft: 28 }}>
+                  <h3 style={{ fontSize: 22, fontWeight: 700, color: "#0d3b8c", marginBottom: 4 }}>
                     勅使河原 将（テシガハラ ショウ）
                   </h3>
-                  <p style={{ fontSize: 13, color: C.gold, letterSpacing: "0.1em", marginBottom: 24 }}>
+                  <p style={{ fontSize: 13, color: "#1e88e5", letterSpacing: "0.1em", marginBottom: 24 }}>
                     ブルーカラー軍師 主宰 / 株式会社カノエ 代表取締役
                   </p>
                   <p style={{ fontSize: 14, color: "#444", lineHeight: 1.9, marginBottom: 24 }}>
@@ -487,8 +487,8 @@ export default function Temoto() {
                       { label: "実績", value: "おそうじ本舗7店舗展開 / 従業員20名超 / 年商1億円突破 / テレビ朝日グッド！モーニング・ZIP・ヒルナンデス出演" },
                       { label: "趣味", value: "トライアスロン（マレーシアでIronmanロング完走）・ボディメイク・大掃除と模様替え" },
                     ].map((item, i) => (
-                      <div key={i} style={{ padding: "12px 16px", backgroundColor: C.offWhite, borderLeft: `3px solid ${C.gold}` }}>
-                        <p style={{ fontSize: 11, fontWeight: 700, color: C.gold, letterSpacing: "0.1em", marginBottom: 4 }}>{item.label}</p>
+                      <div key={i} style={{ padding: "12px 16px", backgroundColor: "#f0f6ff", borderLeft: `3px solid ${"#1e88e5"}` }}>
+                        <p style={{ fontSize: 11, fontWeight: 700, color: "#1e88e5", letterSpacing: "0.1em", marginBottom: 4 }}>{item.label}</p>
                         <p style={{ fontSize: 13, color: "#555", lineHeight: 1.7 }}>{item.value}</p>
                       </div>
                     ))}
@@ -514,11 +514,11 @@ export default function Temoto() {
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(10,25,45,0.80)" }} />
         <div style={{ position: "relative" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Get Started</p>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>Get Started</p>
             <h2 style={{ fontSize: "clamp(20px, 3.2vw, 34px)", fontWeight: 700, color: "#fff", marginBottom: 16, lineHeight: 1.6 }}>
               大将の隣に、軍師を。<br />まずは無料でLINE相談してください。
             </h2>
-            <p style={{ fontSize: 14, color: C.textMuted, marginBottom: 40, lineHeight: 1.8 }}>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.72)", marginBottom: 40, lineHeight: 1.8 }}>
               相談は無料です。あなたの現状と目標を聞かせてください。<br />
               一緒に次の戦略を考えましょう。
             </p>
@@ -526,7 +526,7 @@ export default function Temoto() {
               href="https://lin.ee/FyWcNMb"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 600, padding: "16px 40px", backgroundColor: C.gold, color: "#fff", textDecoration: "none", letterSpacing: "0.06em", transition: "opacity 0.2s" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 600, padding: "16px 40px", backgroundColor: "#1e88e5", color: "#fff", textDecoration: "none", letterSpacing: "0.06em", transition: "opacity 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
               onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
             >
@@ -537,11 +537,11 @@ export default function Temoto() {
       </section>
 
       {/* ===== CONTACT ===== */}
-      <section id="contact" style={{ padding: "96px 24px", backgroundColor: C.offWhite }}>
+      <section id="contact" style={{ padding: "96px 24px", backgroundColor: "#f0f6ff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: C.gold, textTransform: "uppercase", marginBottom: 16 }}>Contact</p>
-            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: C.darkNavy, marginBottom: 16 }}>
+            <p style={{ fontSize: 11, letterSpacing: "0.22em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 16 }}>Contact</p>
+            <h2 style={{ fontSize: "clamp(22px, 3.2vw, 36px)", fontWeight: 700, color: "#0d3b8c", marginBottom: 16 }}>
               お問い合わせ
             </h2>
             <p style={{ fontSize: 14, color: "#666", marginBottom: 48, lineHeight: 1.8 }}>
@@ -552,10 +552,10 @@ export default function Temoto() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 64, alignItems: "start" }} className="grid-cols-1 md:grid-cols-contact">
             {/* LINE CTA */}
             <Reveal delay={100}>
-              <div style={{ backgroundColor: C.darkNavy, padding: "32px 28px" }}>
-                <p style={{ fontSize: 11, letterSpacing: "0.18em", color: C.gold, textTransform: "uppercase", marginBottom: 12 }}>Recommended</p>
+              <div style={{ backgroundColor: "#0d3b8c", padding: "32px 28px" }}>
+                <p style={{ fontSize: 11, letterSpacing: "0.18em", color: "#1e88e5", textTransform: "uppercase", marginBottom: 12 }}>Recommended</p>
                 <h3 style={{ fontSize: 16, fontWeight: 700, color: "#fff", marginBottom: 12 }}>LINEで相談する</h3>
-                <p style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.8, marginBottom: 24 }}>
+                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, marginBottom: 24 }}>
                   最も早くご返答できます。気軽にメッセージをお送りください。
                 </p>
                 <a
@@ -571,9 +571,9 @@ export default function Temoto() {
             {/* Form */}
             <Reveal delay={200}>
               {submitted ? (
-                <div style={{ padding: "48px 32px", backgroundColor: "#fff", border: `1px solid ${C.gold}`, textAlign: "center" }}>
+                <div style={{ padding: "48px 32px", backgroundColor: "#fff", border: `1px solid ${"#1e88e5"}`, textAlign: "center" }}>
                   <span style={{ fontSize: 32, display: "block", marginBottom: 16 }}>✓</span>
-                  <h3 style={{ fontSize: 18, fontWeight: 700, color: C.darkNavy, marginBottom: 8 }}>送信完了しました</h3>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: "#0d3b8c", marginBottom: 8 }}>送信完了しました</h3>
                   <p style={{ fontSize: 14, color: "#666" }}>2営業日以内にご返信いたします。</p>
                 </div>
               ) : (
@@ -584,8 +584,8 @@ export default function Temoto() {
                     { label: "メールアドレス", key: "email", type: "email", placeholder: "example@email.com", required: true },
                   ].map(f => (
                     <div key={f.key}>
-                      <label style={{ fontSize: 12, fontWeight: 600, color: C.darkNavy, letterSpacing: "0.06em", display: "block", marginBottom: 6 }}>
-                        {f.label}{f.required && <span style={{ color: C.gold, marginLeft: 4 }}>*</span>}
+                      <label style={{ fontSize: 12, fontWeight: 600, color: "#0d3b8c", letterSpacing: "0.06em", display: "block", marginBottom: 6 }}>
+                        {f.label}{f.required && <span style={{ color: "#1e88e5", marginLeft: 4 }}>*</span>}
                       </label>
                       <input
                         type={f.type}
@@ -594,14 +594,14 @@ export default function Temoto() {
                         value={formData[f.key as keyof typeof formData]}
                         onChange={e => setFormData(prev => ({ ...prev, [f.key]: e.target.value }))}
                         style={{ width: "100%", padding: "12px 16px", border: "1px solid #ddd", fontSize: 14, outline: "none", backgroundColor: "#fff", boxSizing: "border-box", transition: "border-color 0.2s" }}
-                        onFocus={e => (e.currentTarget.style.borderColor = C.navy)}
+                        onFocus={e => (e.currentTarget.style.borderColor = "#1565c0")}
                         onBlur={e => (e.currentTarget.style.borderColor = "#ddd")}
                       />
                     </div>
                   ))}
                   <div>
-                    <label style={{ fontSize: 12, fontWeight: 600, color: C.darkNavy, letterSpacing: "0.06em", display: "block", marginBottom: 6 }}>
-                      お問い合わせ内容 <span style={{ color: C.gold }}>*</span>
+                    <label style={{ fontSize: 12, fontWeight: 600, color: "#0d3b8c", letterSpacing: "0.06em", display: "block", marginBottom: 6 }}>
+                      お問い合わせ内容 <span style={{ color: "#1e88e5" }}>*</span>
                     </label>
                     <textarea
                       placeholder="現在の状況やご相談内容をお書きください"
@@ -610,13 +610,13 @@ export default function Temoto() {
                       value={formData.message}
                       onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))}
                       style={{ width: "100%", padding: "12px 16px", border: "1px solid #ddd", fontSize: 14, outline: "none", resize: "vertical", backgroundColor: "#fff", boxSizing: "border-box", transition: "border-color 0.2s" }}
-                      onFocus={e => (e.currentTarget.style.borderColor = C.navy)}
+                      onFocus={e => (e.currentTarget.style.borderColor = "#1565c0")}
                       onBlur={e => (e.currentTarget.style.borderColor = "#ddd")}
                     />
                   </div>
                   <button
                     type="submit"
-                    style={{ fontSize: 14, fontWeight: 600, padding: "14px 32px", backgroundColor: C.navy, color: "#fff", border: "none", cursor: "pointer", letterSpacing: "0.06em", transition: "opacity 0.2s", alignSelf: "flex-start" }}
+                    style={{ fontSize: 14, fontWeight: 600, padding: "14px 32px", backgroundColor: "#1565c0", color: "#fff", border: "none", cursor: "pointer", letterSpacing: "0.06em", transition: "opacity 0.2s", alignSelf: "flex-start" }}
                     onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
                     onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
                   >
@@ -630,15 +630,15 @@ export default function Temoto() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer style={{ backgroundColor: C.darkNavy, padding: "40px 24px", borderTop: `1px solid rgba(201,168,76,0.2)` }}>
+      <footer style={{ backgroundColor: "#0d3b8c", padding: "40px 24px", borderTop: `1px solid rgba(33,150,243,0.2)` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
           <div>
-            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.06em", color: C.gold, display: "block", marginBottom: 4 }}>ブルーカラー軍師</span>
-            <p style={{ fontSize: 12, color: C.textMuted }}>ブルーカラー経営者の経営参謀・戦略コンサルティングサービス</p>
+            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.06em", color: "#1e88e5", display: "block", marginBottom: 4 }}>ブルーカラー軍師</span>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.72)" }}>ブルーカラー経営者の経営参謀・戦略コンサルティングサービス</p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
-            <p style={{ fontSize: 12, color: C.textMuted }}>運営：株式会社カノエ</p>
-            <a href="https://kanoe.biz" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: C.gold, textDecoration: "none" }}>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.72)" }}>運営：株式会社カノエ</p>
+            <a href="https://kanoe.biz" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: "#1e88e5", textDecoration: "none" }}>
               kanoe.biz →
             </a>
           </div>
