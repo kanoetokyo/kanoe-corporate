@@ -320,7 +320,7 @@ function ConsultingSection() {
                     <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>大将を支える軍師・経営参謀サービスの専用ページへ</p>
                   </div>
                   <a
-                    href="/temoto"
+                    href="/gunshi"
                     className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition-all duration-200 flex-shrink-0"
                     style={{ backgroundColor: "#f5d67a", color: "#1a1a19" }}
                     onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"}
