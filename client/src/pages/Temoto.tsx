@@ -458,17 +458,13 @@ export default function Temoto() {
           </Reveal>
           <Reveal delay={100}>
             <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 56, alignItems: "start" }} className="grid-cols-1 md:grid-cols-profile">
-              {/* Photo placeholder */}
+              {/* Photo */}
               <div>
-                <div style={{ width: "100%", aspectRatio: "3/4", backgroundColor: "#e8e8e8", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: `1px dashed #ccc` }}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="1.5">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                  <p style={{ fontSize: 12, color: "#aaa", marginTop: 12, textAlign: "center", padding: "0 16px" }}>
-                    プロフィール写真<br />（後ほど追加予定）
-                  </p>
-                </div>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/profile-teshigahara_bbb3a5fc.jpg"
+                  alt="勅使河原 将"
+                  style={{ width: "100%", aspectRatio: "3/4", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                />
               </div>
               {/* Bio */}
               <div>
