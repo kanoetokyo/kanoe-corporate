@@ -1,10 +1,66 @@
-// 特定商取引法に基づく表記ページ
-// Design: カノエコーポレートサイトと同一のネイビー×オフホワイトテーマ
-// Stripe要件準拠: 販売業者名・住所・電話番号・メール・代表者・追加費用・返品/交換・納期・支払方法・支払期間・価格 を全て掲載
+/**
+ * 特定商取引法に基づく表記
+ * Design: カノエコーポレートサイトと同一デザインシステム
+ * - 背景: #f8f8f7（オフホワイト）
+ * - テキスト: #1a1a19
+ * - アクセント: ネイビー #1e3a5f
+ * - ゴールド: #c9a84c（セクションラベル）
+ * - フォント: Noto Sans JP
+ * Stripe要件準拠: 全必須項目掲載
+ */
 
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 
-const items = [
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/kanoe-logo_b797e5af.png";
+
+const C = {
+  bg: "#f8f8f7",
+  bgWhite: "#ffffff",
+  text: "#1a1a19",
+  textMuted: "#858481",
+  textLight: "#b0afac",
+  border: "#e8e8e6",
+  navy: "#1e3a5f",
+  navyLight: "#2a5298",
+  gold: "#c9a84c",
+};
+
+// スクロールアニメーション
+function useScrollReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.06 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, visible };
+}
+
+function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const { ref, visible } = useScrollReveal();
+  return (
+    <div
+      ref={ref}
+      style={{ transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms` }}
+      className={visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
+    >
+      {children}
+    </div>
+  );
+}
+
+const items: {
+  label: string;
+  value?: string;
+  note?: string;
+  multiline?: boolean;
+  sections?: { title: string; content: string }[];
+}[] = [
   {
     label: "販売業者名",
     value: "株式会社カノエ",
@@ -15,12 +71,12 @@ const items = [
   },
   {
     label: "所在地",
-    value: "〒140-0014 東京都品川区大井1-49-8 大井町センタービル4F",
+    value: "〒140-0011 東京都品川区大井3-18-18 REX Oimachi 1F",
   },
   {
     label: "電話番号",
-    value: "0120-19-7576\n受付時間：10:00〜18:00（土日祝除く）",
-    note: "お電話でのお問い合わせは上記番号へ。営業時間外はメールにてご連絡ください。",
+    value: "0120-19-7576",
+    note: "受付時間：10:00〜18:00（土日祝除く）。営業時間外はメールにてご連絡ください。",
   },
   {
     label: "メールアドレス",
@@ -54,7 +110,6 @@ const items = [
   },
   {
     label: "返品・交換・キャンセルについて",
-    value: "",
     multiline: true,
     sections: [
       {
@@ -74,225 +129,329 @@ const items = [
 ];
 
 export default function LegalPage() {
+  // ヘッダーのスクロール制御
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div
       style={{
         fontFamily: "'Noto Sans JP', sans-serif",
-        backgroundColor: "#f8f7f4",
+        backgroundColor: C.bg,
+        color: C.text,
         minHeight: "100vh",
-        color: "#1a2a3a",
       }}
     >
-      {/* Header */}
+      {/* ===== ヘッダー（Home.tsxと同一スタイル） ===== */}
       <header
         style={{
-          backgroundColor: "#0d1f3c",
-          padding: "0 24px",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 100,
           height: 64,
+          backgroundColor: scrolled ? "rgba(248,248,247,0.96)" : C.bg,
+          borderBottom: `1px solid ${scrolled ? C.border : "transparent"}`,
+          backdropFilter: scrolled ? "blur(8px)" : "none",
+          transition: "all 0.3s ease",
           display: "flex",
           alignItems: "center",
+          padding: "0 24px",
           justifyContent: "space-between",
         }}
       >
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <span
-            style={{
-              fontSize: 18,
-              fontWeight: 700,
-              color: "#fff",
-              letterSpacing: "0.08em",
-            }}
-          >
-            KANOE
-          </span>
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
+          <img src={LOGO_URL} alt="株式会社カノエ" style={{ height: 28, width: "auto" }} />
         </Link>
         <Link
           href="/"
           style={{
             fontSize: 13,
-            color: "rgba(255,255,255,0.7)",
+            color: C.textMuted,
             textDecoration: "none",
             display: "flex",
             alignItems: "center",
             gap: 6,
+            transition: "color 0.2s",
           }}
+          onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.color = C.text}
+          onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.color = C.textMuted}
         >
           ← トップページへ戻る
         </Link>
       </header>
 
-      {/* Main */}
-      <main style={{ maxWidth: 800, margin: "0 auto", padding: "64px 24px 96px" }}>
-        {/* Page Title */}
-        <div style={{ marginBottom: 48 }}>
+      {/* ===== ページヘッダー ===== */}
+      <div
+        style={{
+          backgroundColor: C.navy,
+          paddingTop: 64,
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 900,
+            margin: "0 auto",
+            padding: "64px 24px 56px",
+          }}
+        >
+          <Reveal>
+            <p
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.22em",
+                color: C.gold,
+                textTransform: "uppercase",
+                marginBottom: 16,
+              }}
+            >
+              Legal
+            </p>
+            <h1
+              style={{
+                fontSize: "clamp(22px, 3vw, 36px)",
+                fontWeight: 700,
+                color: "#ffffff",
+                marginBottom: 16,
+                lineHeight: 1.4,
+                letterSpacing: "0.04em",
+              }}
+            >
+              特定商取引法に基づく表記
+            </h1>
+            <p
+              style={{
+                fontSize: 14,
+                color: "rgba(255,255,255,0.65)",
+                lineHeight: 1.8,
+                maxWidth: 560,
+              }}
+            >
+              特定商取引に関する法律（特定商取引法）第11条に基づき、以下の事項を表示いたします。
+              本ページはStripe決済をご利用いただくにあたり、割賦販売法に基づく開示情報としても機能します。
+            </p>
+          </Reveal>
+        </div>
+      </div>
+
+      {/* ===== メインコンテンツ ===== */}
+      <main
+        style={{
+          maxWidth: 900,
+          margin: "0 auto",
+          padding: "64px 24px 96px",
+        }}
+      >
+        <Reveal>
+          {/* テーブル */}
+          <div
+            style={{
+              backgroundColor: C.bgWhite,
+              border: `1px solid ${C.border}`,
+              overflow: "hidden",
+            }}
+          >
+            {items.map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "clamp(140px, 22%, 220px) 1fr",
+                  borderBottom: i < items.length - 1 ? `1px solid ${C.border}` : "none",
+                }}
+              >
+                {/* ラベル列 */}
+                <div
+                  style={{
+                    backgroundColor: "#f0f4f8",
+                    padding: "20px 20px",
+                    borderRight: `1px solid ${C.border}`,
+                    display: "flex",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: C.navy,
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                </div>
+
+                {/* 値列 */}
+                <div style={{ padding: "20px 28px" }}>
+                  {item.multiline && item.sections ? (
+                    <div>
+                      {item.sections.map((sec, j) => (
+                        <div
+                          key={j}
+                          style={{
+                            marginBottom: j < item.sections!.length - 1 ? 24 : 0,
+                          }}
+                        >
+                          <div
+                            style={{
+                              borderLeft: `3px solid ${C.gold}`,
+                              paddingLeft: 12,
+                              marginBottom: 8,
+                            }}
+                          >
+                            <p
+                              style={{
+                                fontSize: 12,
+                                fontWeight: 700,
+                                color: C.navy,
+                                letterSpacing: "0.04em",
+                              }}
+                            >
+                              ＜{sec.title}＞
+                            </p>
+                          </div>
+                          <p
+                            style={{
+                              fontSize: 13,
+                              color: C.text,
+                              lineHeight: 1.9,
+                              whiteSpace: "pre-line",
+                            }}
+                          >
+                            {sec.content}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div>
+                      <p
+                        style={{
+                          fontSize: 13,
+                          color: C.text,
+                          lineHeight: 1.9,
+                          whiteSpace: "pre-line",
+                          marginBottom: item.note ? 10 : 0,
+                        }}
+                      >
+                        {item.value}
+                      </p>
+                      {item.note && (
+                        <p
+                          style={{
+                            fontSize: 12,
+                            color: C.textMuted,
+                            lineHeight: 1.7,
+                            borderTop: `1px dashed ${C.border}`,
+                            paddingTop: 8,
+                          }}
+                        >
+                          ※ {item.note}
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* 更新日 */}
+        <Reveal delay={100}>
           <p
             style={{
-              fontSize: 11,
-              letterSpacing: "0.22em",
-              color: "#c9a84c",
-              textTransform: "uppercase",
-              marginBottom: 12,
+              marginTop: 40,
+              fontSize: 12,
+              color: C.textLight,
+              lineHeight: 1.8,
+              textAlign: "right",
             }}
           >
-            Legal
+            最終更新日：2026年3月
           </p>
-          <h1
+        </Reveal>
+
+        {/* トップへ戻るリンク */}
+        <Reveal delay={150}>
+          <div style={{ marginTop: 48, paddingTop: 32, borderTop: `1px solid ${C.border}` }}>
+            <Link
+              href="/"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                fontSize: 13,
+                color: C.navy,
+                textDecoration: "none",
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7"}
+              onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = "1"}
+            >
+              ← トップページへ戻る
+            </Link>
+          </div>
+        </Reveal>
+      </main>
+
+      {/* ===== フッター（Home.tsxと同一スタイル） ===== */}
+      <footer
+        style={{ backgroundColor: C.navy }}
+        className="py-8"
+      >
+        <div
+          style={{
+            maxWidth: 900,
+            margin: "0 auto",
+            padding: "0 24px",
+          }}
+        >
+          <div
             style={{
-              fontSize: "clamp(22px, 3vw, 32px)",
-              fontWeight: 700,
-              color: "#0d1f3c",
-              marginBottom: 16,
-              lineHeight: 1.4,
+              display: "flex",
+              flexDirection: "column",
+              gap: 16,
             }}
           >
-            特定商取引法に基づく表記
-          </h1>
-          <p style={{ fontSize: 14, color: "#666", lineHeight: 1.8 }}>
-            特定商取引に関する法律（特定商取引法）第11条に基づき、以下の事項を表示いたします。
-          </p>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <img src={LOGO_URL} alt="株式会社カノエ" style={{ height: 22, width: "auto", opacity: 0.85 }} />
+              <span style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>株式会社カノエ</span>
+            </div>
+          </div>
           <div
             style={{
               marginTop: 24,
-              padding: "12px 16px",
-              backgroundColor: "#fff8e1",
-              borderLeft: "3px solid #c9a84c",
-              fontSize: 13,
-              color: "#7a6000",
-              lineHeight: 1.7,
+              paddingTop: 16,
+              borderTop: "1px solid rgba(255,255,255,0.08)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: 8,
             }}
           >
-            本ページはStripe決済をご利用いただくにあたり、割賦販売法に基づく開示情報としても機能します。
-          </div>
-        </div>
-
-        {/* Table */}
-        <div
-          style={{
-            backgroundColor: "#fff",
-            border: "1px solid #e0e0e0",
-            overflow: "hidden",
-          }}
-        >
-          {items.map((item, i) => (
-            <div
-              key={i}
+            <p style={{ fontSize: 11, color: "rgba(255,255,255,0.3)" }}>
+              © {new Date().getFullYear()} 株式会社カノエ All Rights Reserved.
+            </p>
+            <span
               style={{
-                display: "grid",
-                gridTemplateColumns: "200px 1fr",
-                borderBottom: i < items.length - 1 ? "1px solid #e8e8e8" : "none",
+                fontSize: 11,
+                color: "rgba(255,255,255,0.4)",
               }}
             >
-              {/* Label */}
-              <div
-                style={{
-                  backgroundColor: "#f0f4f8",
-                  padding: "20px 20px",
-                  borderRight: "1px solid #e0e0e0",
-                  display: "flex",
-                  alignItems: "flex-start",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: "#0d1f3c",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {item.label}
-                </span>
-              </div>
-
-              {/* Value */}
-              <div style={{ padding: "20px 24px" }}>
-                {item.multiline && item.sections ? (
-                  <div>
-                    {item.sections.map((sec, j) => (
-                      <div key={j} style={{ marginBottom: j < item.sections!.length - 1 ? 20 : 0 }}>
-                        <p
-                          style={{
-                            fontSize: 13,
-                            fontWeight: 700,
-                            color: "#0d1f3c",
-                            marginBottom: 8,
-                          }}
-                        >
-                          ＜{sec.title}＞
-                        </p>
-                        <p
-                          style={{
-                            fontSize: 13,
-                            color: "#444",
-                            lineHeight: 1.8,
-                            whiteSpace: "pre-line",
-                          }}
-                        >
-                          {sec.content}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div>
-                    <p
-                      style={{
-                        fontSize: 13,
-                        color: "#333",
-                        lineHeight: 1.8,
-                        whiteSpace: "pre-line",
-                        marginBottom: item.note ? 8 : 0,
-                      }}
-                    >
-                      {item.value}
-                    </p>
-                    {item.note && (
-                      <p
-                        style={{
-                          fontSize: 12,
-                          color: "#888",
-                          lineHeight: 1.7,
-                          borderTop: "1px dashed #e0e0e0",
-                          paddingTop: 8,
-                          marginTop: 4,
-                        }}
-                      >
-                        ※ {item.note}
-                      </p>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
+              特定商取引法に基づく表記
+            </span>
+          </div>
         </div>
-
-        {/* Footer note */}
-        <p
-          style={{
-            marginTop: 40,
-            fontSize: 12,
-            color: "#999",
-            lineHeight: 1.8,
-            textAlign: "center",
-          }}
-        >
-          本表記は予告なく変更される場合があります。最新の情報は本ページをご確認ください。<br />
-          最終更新日：2026年3月
-        </p>
-      </main>
-
-      {/* Footer */}
-      <footer
-        style={{
-          backgroundColor: "#0d1f3c",
-          padding: "32px 24px",
-          textAlign: "center",
-        }}
-      >
-        <p style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>
-          © 2024 株式会社カノエ All Rights Reserved.
-        </p>
       </footer>
     </div>
   );
