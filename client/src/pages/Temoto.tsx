@@ -643,8 +643,14 @@ export default function Temoto() {
             </a>
           </div>
         </div>
-        <div style={{ maxWidth: 1100, margin: "24px auto 0", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 20, textAlign: "center" }}>
+        <div style={{ maxWidth: 1100, margin: "24px auto 0", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 20, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
           <p style={{ fontSize: 11, color: "rgba(255,255,255,0.3)" }}>© 2025 株式会社カノエ. All rights reserved.</p>
+          <a href="/legal" style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s" }}
+            onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.color = "#90caf9"}
+            onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.5)"}
+          >
+            特定商取引法に基づく表記
+          </a>
         </div>
       </footer>
 

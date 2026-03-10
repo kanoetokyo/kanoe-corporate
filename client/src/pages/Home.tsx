@@ -1096,10 +1096,19 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="mt-6 pt-4" style={{ borderTop: `1px solid ${C.border}` }}>
+          <div className="mt-6 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3" style={{ borderTop: `1px solid ${C.border}` }}>
             <p className="text-xs" style={{ color: C.textLight }}>
               © {new Date().getFullYear()} 株式会社カノエ All Rights Reserved.
             </p>
+            <a
+              href="/legal"
+              className="text-xs transition-colors duration-200"
+              style={{ color: C.textMuted }}
+              onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.color = C.text}
+              onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.color = C.textMuted}
+            >
+              特定商取引法に基づく表記
+            </a>
           </div>
         </div>
       </footer>
