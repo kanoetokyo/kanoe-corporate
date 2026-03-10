@@ -915,7 +915,7 @@ export default function Home() {
       </Reveal>
 
       {/* ===== コンサルティングサービスセクション ===== */}
-      <ConsultingSection />
+      {/* <ConsultingSection /> */}{/* ブルーカラー軍師セクション（一時非表示） */}
 
       {/* ===== 会社概要セクション ===== */}
       <Reveal>
