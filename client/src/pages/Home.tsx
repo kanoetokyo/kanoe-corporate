@@ -917,6 +917,102 @@ export default function Home() {
       {/* ===== コンサルティングサービスセクション ===== */}
       {/* <ConsultingSection /> */}{/* ブルーカラー軍師セクション（一時非表示） */}
 
+      {/* ===== 中小企業DX支援セクション ===== */}
+      <Reveal>
+        <section id="dx" style={{ backgroundColor: C.navy }} className="py-14 md:py-20">
+          <div className="container">
+            {/* セクションヘッダー */}
+            <div className="mb-10">
+              <p className="text-xs tracking-[0.15em] uppercase mb-2" style={{ color: "rgba(255,255,255,0.45)" }}>DX Support</p>
+              <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "#ffffff" }}>中小企業DX支援</h2>
+              <div style={{ width: 40, height: 2, backgroundColor: "#c9a84c", marginTop: 12 }} />
+            </div>
+
+            {/* 背景ストーリー */}
+            <div style={{ maxWidth: 720, marginBottom: 48 }}>
+              <p style={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.9, fontSize: 15 }}>
+                カノエは、おそうじ本舗フランチャイズの現場運営を通じて、スタッフへの連絡周知・シフト管理・業務フローの非効率さを自ら体験してきました。
+                「現場で本当に使えるシステムを、現場目線でつくりたい」という思いから、自社の課題解決のために開発したプロダクトを、同じ悩みを持つ中小企業・小規模事業者向けに提供しています。
+                実際に自社で運用し、改善を重ねたシステムだからこそ、現場の実態に即した使いやすさを実現しています。
+              </p>
+            </div>
+
+            {/* 伝わるくんカード */}
+            <div style={{ marginBottom: 12 }}>
+              <p className="text-xs tracking-[0.15em] uppercase mb-4" style={{ color: "rgba(255,255,255,0.45)" }}>参考プロダクト</p>
+            </div>
+            <a
+              href="https://tsutawarukun.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", display: "block" }}
+            >
+              <div
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  borderRadius: 4,
+                  padding: "32px 36px",
+                  maxWidth: 680,
+                  transition: "background 0.2s, border-color 0.2s",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLDivElement).style.backgroundColor = "rgba(255,255,255,0.1)";
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(201,168,76,0.5)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLDivElement).style.backgroundColor = "rgba(255,255,255,0.06)";
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.15)";
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 24, flexWrap: "wrap" }}>
+                  {/* アイコン */}
+                  <div style={{
+                    width: 56, height: 56, borderRadius: 8,
+                    backgroundColor: "#f97316",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    flexShrink: 0,
+                    fontSize: 24,
+                  }}>📋</div>
+
+                  <div style={{ flex: 1, minWidth: 200 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                      <h3 style={{ color: "#ffffff", fontSize: 20, fontWeight: 700, margin: 0 }}>伝わるくん</h3>
+                      <span style={{
+                        fontSize: 10, fontWeight: 600, letterSpacing: "0.1em",
+                        color: "#c9a84c", border: "1px solid #c9a84c",
+                        padding: "2px 8px", borderRadius: 2,
+                      }}>自社開発</span>
+                    </div>
+                    <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, marginBottom: 12 }}>オンライン掲示板アプリ</p>
+                    <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 14, lineHeight: 1.8, margin: 0 }}>
+                      LINEに流れがちな大切な連絡を、全員にちゃんと届ける。既読チェック・期限設定・業務リンク集など、10〜50人規模の現場チームに必要な機能をシンプルに搭載。アプリ不要・スマホ対応。10人以下はずっと無料。
+                    </p>
+
+                    {/* 特徴タグ */}
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
+                      {["既読チェック機能", "期限設定・リマインド", "業務リンク集", "スマホ対応", "10人以下無料"].map(tag => (
+                        <span key={tag} style={{
+                          fontSize: 11, color: "rgba(255,255,255,0.6)",
+                          border: "1px solid rgba(255,255,255,0.2)",
+                          padding: "3px 10px", borderRadius: 2,
+                        }}>{tag}</span>
+                      ))}
+                    </div>
+
+                    <div style={{ marginTop: 20, display: "flex", alignItems: "center", gap: 6 }}>
+                      <span style={{ color: "#c9a84c", fontSize: 13, fontWeight: 600 }}>tsutawarukun.com</span>
+                      <span style={{ color: "#c9a84c", fontSize: 12 }}>↗</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+      </Reveal>
+
       {/* ===== 会社概要セクション ===== */}
       <Reveal>
         <section style={{ backgroundColor: C.bg }} className="py-14 md:py-20">
