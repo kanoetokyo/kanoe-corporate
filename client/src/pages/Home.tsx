@@ -917,14 +917,14 @@ export default function Home() {
       {/* ===== コンサルティングサービスセクション ===== */}
       {/* <ConsultingSection /> */}{/* ブルーカラー軍師セクション（一時非表示） */}
 
-      {/* ===== 中小企業DX支援セクション ===== */}
+      {/* ===== 現場DX支援セクション ===== */}
       <Reveal>
         <section id="dx" style={{ backgroundColor: C.navy }} className="py-14 md:py-20">
           <div className="container">
             {/* セクションヘッダー */}
             <div className="mb-10">
               <p className="text-xs tracking-[0.15em] uppercase mb-2" style={{ color: "rgba(255,255,255,0.45)" }}>DX Support</p>
-              <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "#ffffff" }}>中小企業DX支援</h2>
+              <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "#ffffff" }}>現場DX支援</h2>
               <div style={{ width: 40, height: 2, backgroundColor: "#c9a84c", marginTop: 12 }} />
             </div>
 
@@ -967,15 +967,6 @@ export default function Home() {
                 }}
               >
                 <div style={{ display: "flex", alignItems: "flex-start", gap: 24, flexWrap: "wrap" }}>
-                  {/* アイコン */}
-                  <div style={{
-                    width: 56, height: 56, borderRadius: 8,
-                    backgroundColor: "#f97316",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    flexShrink: 0,
-                    fontSize: 24,
-                  }}>📋</div>
-
                   <div style={{ flex: 1, minWidth: 200 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
                       <h3 style={{ color: "#ffffff", fontSize: 20, fontWeight: 700, margin: 0 }}>伝わるくん</h3>
