@@ -28,6 +28,7 @@ const C = {
 };
 
 const navLinks = [
+  { label: "現場DX支援", href: "#dx", external: false },
   { label: "おそうじ本舗", href: "https://osouji-oimachi.com/", external: true },
   { label: "ご予約", href: "https://lin.ee/lQfaoYR", external: true },
   { label: "外壁洗浄", href: "https://www.osoujihonpo.com/campaign/outerwall/?utm_source=google&utm_medium=cpc&utm_campaign=gs_31&utm_content=gs_038&utm_term=%E3%81%8A%E3%81%9D%E3%81%86%E3%81%98%E6%9C%AC%E8%88%97%20%E5%A4%96%E5%A3%81%E6%B4%97%E6%B5%84_p_c_22377521737_175695704614_783378233018&argument=kXLBSm4y&dmai=a67e2539f72433&gad_source=1&gad_campaignid=22377521737&gbraid=0AAAAACnAqqzNGANzsg_SvMpYjsZfZNvuE&gclid=CjwKCAiAh5XNBhAAEiwA_Bu8FTyZ-bOM_b2hpXhQh89Y7IqvtAy7VF8dC7bbZROaJDnb2BN9070-4xoCeAAQAvD_BwE", external: true },
@@ -381,9 +382,14 @@ export default function Home() {
                   style={{ color: C.textMuted }}
                   onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.color = C.navy}
                   onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.color = C.textMuted}
+                  onClick={!link.external ? (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.href);
+                    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+                  } : undefined}
                 >
                   {link.label}
-                  <ExternalIcon />
+                  {link.external && <ExternalIcon />}
                 </a>
               ))}
               <a
@@ -431,10 +437,17 @@ export default function Home() {
                 rel={link.external ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-1.5 text-sm py-2"
                 style={{ color: C.textMuted, borderBottom: `1px solid ${C.border}` }}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => {
+                  setMenuOpen(false);
+                  if (!link.external) {
+                    e.preventDefault();
+                    const target = document.querySelector(link.href);
+                    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
               >
                 {link.label}
-                <ExternalIcon />
+                {link.external && <ExternalIcon />}
               </a>
             ))}
             <a href="tel:0120197576" className="text-sm font-medium py-2" style={{ color: C.text }}>
