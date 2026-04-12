@@ -124,16 +124,6 @@ const reviews = [
 // その他のおそうじ（アコーディオン）
 const otherServices = [
   {
-    title: "オフィス定期清掃",
-    description: "オフィス・事務所の定期清掃サービスです。床・トイレ・共用部など、プロのスタッフが定期的に清掃いたします。清潔な職場環境を維持することで、従業員の生産性向上にもつながります。",
-    detail: "対応エリア：東京・神奈川・大阪\n頻度：週1回〜月1回など柔軟に対応\nお見積もり・ご相談はLINEまたはお電話にて承ります。",
-  },
-  {
-    title: "マンション定期清掃",
-    description: "マンション・アパートの共用部（エントランス・廊下・階段・エレベーター等）の定期清掃サービスです。入居者様が快適に過ごせる環境づくりをサポートします。",
-    detail: "対応エリア：東京・神奈川・大阪\n頻度：週1回〜月1回など柔軟に対応\n管理組合・管理会社様からのご依頼も歓迎いたします。",
-  },
-  {
     title: "マンスリーマンション入れ替え清掃",
     description: "マンスリーマンション・ウィークリーマンションの退去・入居時の清掃サービスです。短期間での対応も可能で、次の入居者様に気持ちよく使っていただける状態に仕上げます。",
     detail: "対応エリア：東京・神奈川・大阪\n短期対応・急ぎの依頼もご相談ください\nまとめて複数室のご依頼も承ります。",
@@ -811,9 +801,107 @@ export default function Home() {
                   <p className="text-xs" style={{ color: C.textMuted }}>キャンペーン情報</p>
                 </div>
               </a>
+
+              {/* マンスリーマンション入れ替え清掃 */}
+              <div
+                className="group flex flex-col gap-3 p-5 transition-all duration-200 cursor-default"
+                style={{ border: `1px solid ${C.border}`, backgroundColor: C.bg }}
+              >
+                <div className="flex items-start">
+                  <div className="w-8 h-8 flex items-center justify-center" style={{ backgroundColor: C.navyBg }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 21V7l9-4 9 4v14" stroke={C.navy} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 21V13h6v8" stroke={C.navy} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-medium mb-0.5" style={{ color: C.text }}>マンスリーマンション入れ替え清掃</p>
+                  <p className="text-xs" style={{ color: C.textMuted }}>退去・入居時の清掃</p>
+                </div>
+              </div>
+
+              {/* 排水管洗浄 */}
+              <div
+                className="group flex flex-col gap-3 p-5 transition-all duration-200 cursor-default"
+                style={{ border: `1px solid ${C.border}`, backgroundColor: C.bg }}
+              >
+                <div className="flex items-start">
+                  <div className="w-8 h-8 flex items-center justify-center" style={{ backgroundColor: C.navyBg }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2v6m0 0c-3.5 0-6 1.5-6 4v2h12v-2c0-2.5-2.5-4-6-4z" stroke={C.navy} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M6 14v4a2 2 0 002 2h8a2 2 0 002-2v-4" stroke={C.navy} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M12 20v2" stroke={C.navy} strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-medium mb-0.5" style={{ color: C.text }}>排水管洗浄</p>
+                  <p className="text-xs" style={{ color: C.textMuted }}>高圧洗浄で詰まり予防</p>
+                </div>
+              </div>
             </div>
 
-            {/* その他のおそうじ */}
+            {/* 定期清掃（オフィス＋マンション統合） */}
+            <div className="mt-6">
+              <div className="mb-4">
+                <p className="text-xs tracking-[0.15em] uppercase mb-1" style={{ color: C.textLight }}>Regular Cleaning</p>
+                <h3 className="text-base font-bold" style={{ color: C.text }}>定期清掃サービス</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {/* マンション定期清掃 */}
+                <a
+                  href="/teiki"
+                  className="group flex flex-col gap-3 p-5 transition-all duration-200"
+                  style={{ border: `1px solid ${C.border}`, backgroundColor: C.bgWhite }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = C.navyLight; (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.navyBg; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = C.border; (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.bgWhite; }}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="w-8 h-8 flex items-center justify-center" style={{ backgroundColor: C.navyBg }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke={C.navy} strokeWidth="1.5"/>
+                        <path d="M3 9h18M9 21V9" stroke={C.navy} strokeWidth="1.5"/>
+                      </svg>
+                    </div>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ color: C.textLight }}>
+                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium mb-0.5" style={{ color: C.text }}>マンション定期清掃</p>
+                    <p className="text-xs" style={{ color: C.textMuted }}>エントランス・廊下・共用部の定期清掃</p>
+                  </div>
+                </a>
+
+                {/* オフィス定期清掃 */}
+                <a
+                  href="/teiki"
+                  className="group flex flex-col gap-3 p-5 transition-all duration-200"
+                  style={{ border: `1px solid ${C.border}`, backgroundColor: C.bgWhite }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = C.navyLight; (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.navyBg; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = C.border; (e.currentTarget as HTMLAnchorElement).style.backgroundColor = C.bgWhite; }}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="w-8 h-8 flex items-center justify-center" style={{ backgroundColor: C.navyBg }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21V7l9-4 9 4v14" stroke={C.navy} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M9 21V13h6v8" stroke={C.navy} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ color: C.textLight }}>
+                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium mb-0.5" style={{ color: C.text }}>オフィス定期清掃</p>
+                    <p className="text-xs" style={{ color: C.textMuted }}>フロア・トイレ・共用部の定期清掃</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {/* その他のおそうじ（マンスリー・排水管以外） */}
             <OtherServices />
           </div>
         </section>

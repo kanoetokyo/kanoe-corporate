@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Temoto from "./pages/Temoto";
 import LegalPage from "./pages/LegalPage";
+import TeikiPage from "./pages/TeikiPage";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/gunshi"} component={Temoto} />
       <Route path={"/legal"} component={LegalPage} />
+      <Route path={"/teiki"} component={TeikiPage} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
