@@ -452,16 +452,18 @@ export default function Home() {
         className="pt-14 md:pt-16"
         style={{
           position: "relative",
-          background: "linear-gradient(135deg, #0a1628 0%, #1e3a5f 50%, #2a5298 100%)",
+          backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663393929968/iYwBZn5CdVZAZNoSzLfUqs/0086_240110_1043276f.JPG')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        {/* 装飾パターン */}
+        {/* グレー半透明オーバーレイ */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            pointerEvents: "none",
-            background: "repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px)",
+            backgroundColor: "rgba(30, 35, 45, 0.62)",
             zIndex: 0,
           }}
         />
